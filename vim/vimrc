@@ -1,7 +1,7 @@
 set nocompatible    " Use Vim settings instead of vi. Must be first.
 " Next bit is to kick off Vundle
 filetype off
-set rtp+=~/.vim/vundle.git/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 """"" My installed bundles
 " VimScripts

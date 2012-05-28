@@ -6,6 +6,7 @@
 
 import os
 import shutil
+import subprocess
 
 # Key is the dotfile in the home directory, the value is location in the
 # dotfiles directory where the file will be stored (and linked to)
@@ -38,3 +39,9 @@ for k,v in fileMap.iteritems():
         print "Creating directory " + os.path.dirname(homeDirName + "/" + k)
         os.makedirs(os.path.dirname(homeDirName + "/" + k))
     os.symlink(dotfilesDirName + "/" + v, homeDirName + "/" + k)
+print "Cloning Vundle"
+cloneStatus = subprocess.call(["git", "clone", "git://github.com/gmarik/vundle.git", "vim/bundle/vundle"])
+if not cloneStatus:
+    print "Now start vim and run ':BundleInstall'"
+else:
+    print "There was an error cloning the Vundle repository!"
