@@ -1,0 +1,62 @@
+# Executed from an interactive shell, once per login.
+# See .bashrc for non-interactive
+
+# Inherit .profile
+if [ -f ~/.profile ]; then . ~/.profile; fi
+# Get the environment variables
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+# Get machine-specific aliases
+if [ -f ~/.bash_profile.local ]; then . ~/.bash_profile.local; fi
+# Enable bash completion if installed
+if [ -f /usr/local/etc/bash_completion.d ]; then . /usr/local/etc/bash_completion.d
+elif type -P brew &> /dev/null; then . `brew --prefix`/etc/bash_completion
+fi
+# Path suffixes to ignore when doing shell completion
+export FIGNORE=VS:svn
+
+# Enable git completion if installed
+if [ -f ~/.git-completion ]; then 
+    . ~/.git-completion;
+    # Show current branch in prompt
+    GIT_PS1='$(__git_ps1 " (%s)")'
+    #if ! [ -z "$GIT_PS1" ]; then GIT_PS1=" $GIT_PS1 "; fi
+    export GIT_PS1_SHOWDIRTYSTATE=true
+    export GIT_PS1_SHOWSTASHSTATE=true
+    export GIT_PS1_SHOWUNTRACKEDFILES=true
+fi
+
+# Prompt silliness
+GREEN="\[\e[00;32m\]"
+BLUE="\[\e[01;34m\]"
+BLACK="\[\e[00;30m\]"
+RED="\[\e[00;31m\]"
+export PS1="$GREEN\u@\h $BLACK\W$RED$GIT_PS1 $BLUE\[\e[00m\]➔  "
+
+# Store more history, ignoring dupes
+export HISTCONTROL=erasedups
+export HISTSIZE=1000
+shopt -s histappend
+
+# vi-style command editing
+set -o vi
+
+# Set aliases for interactive terminal use
+alias vi=vim
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias l='ls -lAh'
+alias la='ls -a'
+alias ll='ls -l'
+alias m='ssh lhanson@my-dev.doit.wisc.edu'
+alias t='tail -f ~/log'
+alias gmaven='mvn archetype:generate -DarchetypeGroupId=org.codehaus.groovy.maven.archetypes -DarchetypeArtifactId=gmaven-archetype-basic'
+alias g=git
+# Work around non-awesome Solaris 'ls' which lacks color
+if [[ `uname` =~ "SunOS" ]]; then
+    alias ls='ls -F'
+elif [[ `uname` =~ "Linux" ]]; then
+    alias ls='ls --color=auto' 
+else
+    alias ls='ls -G' 
+fi

@@ -1,0 +1,40 @@
+#!/usr/bin/python
+# Sets up the users's dotfiles as links to the git-versioned ones in .dotfiles.
+# It wouldn't be tough to just scan the dotfiles dir to see what matches up
+# with a dotfile in ~ and link based on that, but for now I'm explicitly
+# listing which files to track.
+
+import os
+import shutil
+
+# Key is the dotfile in the home directory, the value is location in the
+# dotfiles directory where the file will be stored (and linked to)
+fileMap = dict([(".vim", "vim"),
+                (".vimrc", "vim/vimrc"),
+                (".gvimrc", "vim/gvimrc"),
+                (".bash_profile", "bash/bash_profile"),
+                (".gitconfig", "git/gitconfig"),
+                (".git-completion", "git/git-completion.bash"),
+                (".gvimrc", "vim/gvimrc"),
+                (".screenrc", "screenrc") ])
+
+homeDirName = os.getenv("HOME")
+dotfilesDirName = os.path.abspath(os.path.dirname(__file__))
+backupDirName = homeDirName + "/dotfiles_backup"
+if not os.path.exists(backupDirName):
+    print "Creating backup directory at " + backupDirName
+    os.mkdir(backupDirName)
+else:
+    print "Using existing backup directory at " + backupDirName
+
+for k,v in fileMap.iteritems():
+    if os.path.exists(homeDirName + "/" + k):
+        print "Moving existing " + k + " to " + backupDirName + "/" + k
+        shutil.move(homeDirName + "/" + k, backupDirName)
+    else:
+        print "No " + homeDirName + "/" + k + " exists yet"
+    print "Linking to " + dotfilesDirName + "/" + v + " as " + homeDirName + "/" + k
+    if not os.path.exists(os.path.dirname(homeDirName + "/" + k)) :
+        print "Creating directory " + os.path.dirname(homeDirName + "/" + k)
+        os.makedirs(os.path.dirname(homeDirName + "/" + k))
+    os.symlink(dotfilesDirName + "/" + v, homeDirName + "/" + k)

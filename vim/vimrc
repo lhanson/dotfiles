@@ -1,0 +1,193 @@
+set nocompatible    " Use Vim settings instead of vi. Must be first.
+" Next bit is to kick off Vundle
+filetype off
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+""""" My installed bundles
+" VimScripts
+Bundle 'FuzzyFinder'
+Bundle 'VimClojure'
+Bundle 'L9'
+Bundle 'vimwiki'
+" GitHub
+Bundle 'Townk/vim-autoclose'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-surround'
+" Color schemes:
+Bundle 'vim-scripts/delek.vim'
+Bundle 'vim-scripts/inkpot'
+Bundle 'vim-scripts/Professional-colorscheme-for-Vim'
+Bundle 'vim-scripts/pyte'
+Bundle 'vim-scripts/wombat256.vim'
+""""" End installed bundles
+filetype plugin indent on
+" end Vundle config
+
+""" Various Vim settings
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
+set title           " Override terminal title to show Vim title
+set hidden          " Allow multiple open buffers without saving
+set scrolloff=3     " Scroll more context into view when cursor leaves the viewport
+set ruler           " show the cursor position all the time
+set showcmd         " display incomplete commands
+set history=50      " keep 50 lines of command line history
+set wildmenu        " show possible completions
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Centrally located backups
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Centrally located swap
+"set spell spelllang=en_us " Enable spell checking
+nmap <Leader>f :e **/
+cmap <Leader>f :**/
+if exists("+relativenumber")
+  set relativenumber
+else
+  set number
+endif
+let s:colorcol=80
+if exists("+colorcolumn")
+  execute "set colorcolumn=" . s:colorcol
+endif
+
+""" Whitespace settings
+set expandtab       " Use spaces instead of tabs
+set smarttab
+set tabstop=4       " Width of a tab character
+set shiftwidth=4    " Number of spaces to autoindent
+set list            " Default to showing whitespace chars
+nmap <silent> <leader>w :call ToggleWhitespace()<CR>
+
+""" General formatting
+set sm              " Show matching braces
+set fo+=r           " Add * to new line after /*
+
+""" Searching
+set incsearch       " do incremental searching
+set ignorecase      " these two make searching case-sensitive only if there's
+set smartcase       " a capital letter in the search expression
+set wildignore=*.class
+
+""" GUI/colors stuff
+if &t_Co > 2 || has("gui_running")
+  set gfn=Consolas:h14 " set font when using colors or graphical vim
+  syntax on     " syntax highlighting
+  set hlsearch  " hilight last search pattern
+  " change the status line based on mode
+  if version >= 700
+      au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
+      au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
+  endif
+  highlight ColorColumn guibg=Gray26
+else
+  highlight ColorColumn ctermbg=7
+endif
+
+""" Enable Unicode
+if has("multi_byte")
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  set fileencodings=ucs-bom,utf-8,latin1
+  set listchars=tab:▸\ ,eol:¬
+endif
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" Custom functions
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nmap _$ :call <SID>StripTrailingWhitespaces()<CR>
+
+function! ToggleWhitespace()
+    set nolist!
+    call ToggleColorColumn()
+endfunction
+
+function! ToggleColorColumn()
+  if empty(&colorcolumn)
+    if empty(&textwidth)
+      echo "colorcolumn=80"
+      execute "setlocal colorcolumn=" . s:colorcol
+    else
+      echo "colorcolumn=+1 (" . (&textwidth + 1) . ")"
+      setlocal colorcolumn=+1
+    endif
+  else
+    echo "colorcolumn="
+    setlocal colorcolumn=
+  endif
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fuzzy_finder
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|sw[po]|class|jar|war|DS_Store|pyc)$'
+" TODO: working on excluding lib/ from clojure projects!
+let g:fuf_dir_exclude  = '\v'
+            \ . '(^|[/\\])(\.(hg|git|bzr)($|[/\\])'
+            \ . '(^|[/\\])(CVS|lib)($|[/\\])'
+map <D-R> :FufFile **/<CR>
+
+" NERDTree
+map <F2> :NERDTreeToggle<CR>
+" Don't display these kinds of files
+let NERDTreeIgnore=[ '\.pyc$' ]
+
+" MiniBufExplorer
+" Enable ctrl-direction keys to select windows
+let g:miniBufExplMapWindowNavVim = 1
+" Tab cycles forward and Ctrl-I cycles back through open buffers
+map <TAB> :bn<CR>
+map <C-I> :bp<CR>
+
+" Gundo
+nnoremap <F3> :GundoToggle<CR>
+
+" Vimwiki
+let g:vimwiki_list = [{'path': '~/workspace/wiki', 'path_html': '~/Sites/wiki'},
+            \         {'path': '~/workspace/wiki/courseguide', 'path_html': '~/Sites/wiki/courseguide'},
+            \         {'path': '~/workspace/wiki/engineering_log', 'path_html': '~/Sites/wiki/engineering_log'}]
+
+""" Other filetype specific stuff exists in ~/.vim/ftplugin/*.vim
+if has("autocmd")
+  " Enable file type detection, default filetype settings, load indent files
+  filetype plugin indent on
+
+  autocmd BufNewFile,BufRead *.tag set filetype=jsp
+  autocmd Filetype vim setlocal shiftwidth=2
+  autocmd Filetype make setlocal noexpandtab
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+    " Remove ALL autocommands for the current group
+    autocmd!
+
+    " For all text files set 'textwidth' to 78 characters.
+    autocmd FileType text setlocal textwidth=78
+
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \   exe "normal g`\"" |
+          \ endif
+  augroup END
+else
+  set autoindent        " always set autoindenting on
+endif " has("autocmd")
+
+let s:local_config = glob("~/.vimrc.local")
+if filereadable(s:local_config)
+  exe "so " s:local_config
+endif

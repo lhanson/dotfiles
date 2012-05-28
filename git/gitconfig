@@ -1,0 +1,13 @@
+[user]
+    name = Lyle Hanson
+    email = lyle2.0@gmail.com
+[color]
+    ui = auto
+[alias]
+    a = add
+    c = commit
+    cm = commit -m
+    cam = commit -am
+    d = diff
+    l = log
+    s = status
