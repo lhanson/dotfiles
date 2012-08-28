@@ -29,8 +29,9 @@ fi
 GREEN="\[\e[00;32m\]"
 BLUE="\[\e[01;34m\]"
 BLACK="\[\e[00;30m\]"
+WHITE="\[\e[01;37m\]"
 RED="\[\e[00;31m\]"
-export PS1="$GREEN\u@\h $BLACK\W$RED$GIT_PS1 $BLUE\[\e[00m\]➔  "
+export PS1="$GREEN\u@\h $WHITE\W$RED$GIT_PS1 $BLUE\[\e[00m\]➔  "
 
 # Store more history, ignoring dupes
 export HISTCONTROL=erasedups
