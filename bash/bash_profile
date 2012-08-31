@@ -40,6 +40,8 @@ shopt -s histappend
 
 # vi-style command editing
 set -o vi
+# enable extended globbing
+shopt -s  extglob
 
 # Set aliases for interactive terminal use
 alias vi=vim
