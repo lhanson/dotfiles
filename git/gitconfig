@@ -11,3 +11,7 @@
     d = diff
     l = log
     s = status
+[heroku]
+	account = lhanson
+[core]
+	editor = /usr/bin/vim
