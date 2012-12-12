@@ -2,3 +2,4 @@ vim/bundle
 vim/.vimrc.swp
 vim/.netrwhist
 vim/*.un~
+.DS_Store
