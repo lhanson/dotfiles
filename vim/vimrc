@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 """"" My installed bundles
 " VimScripts
-Bundle 'FuzzyFinder'
+"Bundle 'FuzzyFinder'
 Bundle 'VimClojure'
 Bundle 'L9'
 Bundle 'vimwiki'
@@ -15,6 +15,9 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-foreplay'
+Bundle 'fholgado/minibufexpl.vim.git'
+Bundle 'wincent/Command-T.git'
 " Color schemes:
 Bundle 'vim-scripts/delek.vim'
 Bundle 'vim-scripts/inkpot'
@@ -65,7 +68,7 @@ set fo+=r           " Add * to new line after /*
 set incsearch       " do incremental searching
 set ignorecase      " these two make searching case-sensitive only if there's
 set smartcase       " a capital letter in the search expression
-set wildignore=*.class
+set wildignore=*.class,*.jar
 
 """ GUI/colors stuff
 if &t_Co > 2 || has("gui_running")
@@ -130,13 +133,14 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Command-T
+
+
 " Fuzzy_finder
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|sw[po]|class|jar|war|DS_Store|pyc)$'
-" TODO: working on excluding lib/ from clojure projects!
-let g:fuf_dir_exclude  = '\v'
-            \ . '(^|[/\\])(\.(hg|git|bzr)($|[/\\])'
-            \ . '(^|[/\\])(CVS|lib)($|[/\\])'
-map <D-R> :FufFile **/<CR>
+"let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|sw[po]|class|jar|war|DS_Store|pyc)$'
+"let g:fuf_dir_exclude  = '\v'
+"            \ . '|(^|[/\\])(\.(hg|git|bzr)($|[/\\])'
+"map <D-R> :FufFile **/<CR>
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
@@ -156,6 +160,7 @@ nnoremap <F3> :GundoToggle<CR>
 " Vimwiki
 let g:vimwiki_list = [{'path': '~/workspace/wiki', 'path_html': '~/Sites/wiki'},
             \         {'path': '~/workspace/wiki/courseguide', 'path_html': '~/Sites/wiki/courseguide'},
+            \         {'path': '~/workspace/wiki/e-res', 'path_html': '~/Sites/wiki/e-res'},
             \         {'path': '~/workspace/wiki/engineering_log', 'path_html': '~/Sites/wiki/engineering_log'}]
 
 """ Other filetype specific stuff exists in ~/.vim/ftplugin/*.vim
