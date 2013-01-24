@@ -7,6 +7,7 @@
 import os
 import shutil
 import subprocess
+# TODO: conditionally use commands.getstatusoutput("") for older Python versions without subprocess
 
 # Key is the dotfile in the home directory, the value is location in the
 # dotfiles directory where the file will be stored (and linked to)
