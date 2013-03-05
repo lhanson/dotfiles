@@ -40,8 +40,8 @@ set wildmenu        " show possible completions
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Centrally located backups
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Centrally located swap
 "set spell spelllang=en_us " Enable spell checking
-nmap <Leader>f :e **/
-cmap <Leader>f :**/
+"nmap <Leader>f :e **/
+"cmap <Leader>f :**/
 if exists("+relativenumber")
   set relativenumber
 else
@@ -111,8 +111,14 @@ endfunction
 nmap _$ :call <SID>StripTrailingWhitespaces()<CR>
 
 function! ToggleWhitespace()
-    set nolist!
+    set list!
     call ToggleColorColumn()
+    if &relativenumber == 1
+      " Need to switch back to regular number mode first, then disable it
+      set nornu
+    else
+      set rnu
+    endif
 endfunction
 
 function! ToggleColorColumn()
@@ -130,12 +136,16 @@ function! ToggleColorColumn()
   endif
 endfunction
 
+"This allows for change paste motion cp{motion}
+nmap <silent> cp :set opfunc=ChangePaste<CR>g@
+function! ChangePaste(type, ...)
+    silent exe "normal! `[v`]\"_c"
+    silent exe "normal! p"
+endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Command-T
-
-
 " Fuzzy_finder
 "let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|sw[po]|class|jar|war|DS_Store|pyc)$'
 "let g:fuf_dir_exclude  = '\v'
@@ -151,8 +161,8 @@ let NERDTreeIgnore=[ '\.pyc$' ]
 " Enable ctrl-direction keys to select windows
 let g:miniBufExplMapWindowNavVim = 1
 " Tab cycles forward and Ctrl-I cycles back through open buffers
-map <TAB> :bn<CR>
-map <C-I> :bp<CR>
+nmap <TAB> :bn<CR>
+nmap <S-TAB> :bp<CR>
 
 " Gundo
 nnoremap <F3> :GundoToggle<CR>
