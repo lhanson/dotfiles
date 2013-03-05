@@ -6,7 +6,12 @@
 
 import os
 import shutil
-import subprocess
+try
+    import subprocess
+    def cloneVundle(): subprocess.call(["git", "clone", "git://github.com/gmarik/vundle.git", "vim/bundle/vundle"])
+except ImportError:
+    import commands
+    def cloneVundle(): commands.getstatusoutput("git clone git://github.com/gmarik/vundle.git vim/bundle/vundle")
 
 # Key is the dotfile in the home directory, the value is location in the
 # dotfiles directory where the file will be stored (and linked to)
@@ -40,7 +45,7 @@ for k,v in fileMap.iteritems():
         os.makedirs(os.path.dirname(homeDirName + "/" + k))
     os.symlink(dotfilesDirName + "/" + v, homeDirName + "/" + k)
 print "Cloning Vundle"
-cloneStatus = subprocess.call(["git", "clone", "git://github.com/gmarik/vundle.git", "vim/bundle/vundle"])
+cloneStatus = cloneVundle()
 if not cloneStatus:
     print "Now start vim and run ':BundleInstall'"
 else:
