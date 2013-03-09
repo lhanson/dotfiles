@@ -18,6 +18,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-foreplay'
 Bundle 'fholgado/minibufexpl.vim.git'
 Bundle 'wincent/Command-T.git'
+Bundle 'airblade/vim-gitgutter.git'
 " Color schemes:
 Bundle 'vim-scripts/delek.vim'
 Bundle 'vim-scripts/inkpot'
@@ -69,6 +70,23 @@ set incsearch       " do incremental searching
 set ignorecase      " these two make searching case-sensitive only if there's
 set smartcase       " a capital letter in the search expression
 set wildignore=*.class,*.jar
+
+""" Navigate wrapped lines nicely
+nmap j gj
+nmap k gk
+
+""" Make command mode respond to Emacs-style movement chords
+cnoremap <C-a>  <Home>
+cnoremap <C-b>  <Left>
+cnoremap <C-f>  <Right>
+cnoremap <C-d>  <Delete>
+cnoremap <M-b>  <S-Left>
+cnoremap <M-f>  <S-Right>
+cnoremap <M-d>  <S-right><Delete>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+cnoremap <Esc>d <S-right><Delete>
+cnoremap <C-g>  <C-c>
 
 """ GUI/colors stuff
 if &t_Co > 2 || has("gui_running")
