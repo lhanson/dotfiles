@@ -9,9 +9,11 @@ import shutil
 try
     import subprocess
     def cloneVundle(): subprocess.call(["git", "clone", "git://github.com/gmarik/vundle.git", "vim/bundle/vundle"])
+    def gitConfig(): subprocess.call(["git", "config" "--global" "core.excludesfile" "~/.gitignore_global"])
 except ImportError:
     import commands
     def cloneVundle(): commands.getstatusoutput("git clone git://github.com/gmarik/vundle.git vim/bundle/vundle")
+    def gitConfig(): commands.getstatusoutput("git config --global core.excludesfile ~/.gitignore_global")
 
 # Key is the dotfile in the home directory, the value is location in the
 # dotfiles directory where the file will be stored (and linked to)
@@ -20,6 +22,7 @@ fileMap = dict([(".vim", "vim"),
                 (".gvimrc", "vim/gvimrc"),
                 (".bash_profile", "bash/bash_profile"),
                 (".gitconfig", "git/gitconfig"),
+                (".gitignore_global", "git/gitignore_global")
                 (".git-completion", "git/git-completion.bash"),
                 (".gvimrc", "vim/gvimrc"),
                 (".screenrc", "screenrc") ])
@@ -50,3 +53,5 @@ if not cloneStatus:
     print "Now start vim and run ':BundleInstall'"
 else:
     print "There was an error cloning the Vundle repository!"
+print "Configuring global git ignore file"
+gitConfig()
