@@ -52,6 +52,6 @@ cloneStatus = cloneVundle()
 if not cloneStatus:
     print "Now start vim and run ':BundleInstall'"
 else:
-    print "There was an error cloning the Vundle repository!"
+    print "There was an error cloning the Vundle repository! Check your git installation."
 print "Configuring global git ignore file"
 gitConfig()
