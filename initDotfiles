@@ -25,7 +25,8 @@ fileMap = dict([(".vim", "vim"),
                 (".gitignore_global", "git/gitignore_global")
                 (".git-completion", "git/git-completion.bash"),
                 (".gvimrc", "vim/gvimrc"),
-                (".screenrc", "screenrc") ])
+                (".screenrc", "screenrc"),
+                (".ackrc", "ackrc") ])
 
 homeDirName = os.getenv("HOME")
 dotfilesDirName = os.path.abspath(os.path.dirname(__file__))
