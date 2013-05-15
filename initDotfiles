@@ -9,7 +9,7 @@ import shutil
 try:
     import subprocess
     def cloneVundle(): subprocess.call(["git", "clone", "git://github.com/gmarik/vundle.git", "vim/bundle/vundle"])
-    def gitConfig(): subprocess.call(["git", "config" "--global" "core.excludesfile" "~/.gitignore_global"])
+    def gitConfig(): subprocess.call(["git", "config", "--global", "core.excludesfile", "~/.gitignore_global"])
 except ImportError:
     import commands
     def cloneVundle(): commands.getstatusoutput("git clone git://github.com/gmarik/vundle.git vim/bundle/vundle")
