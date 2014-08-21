@@ -38,6 +38,9 @@ export HISTCONTROL=erasedups
 export HISTSIZE=1000
 shopt -s histappend
 
+# Vim, everywhere.
+export EDITOR=vim
+
 # vi-style command editing
 set -o vi
 # enable extended globbing
