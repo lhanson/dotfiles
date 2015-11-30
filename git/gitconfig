@@ -17,4 +17,4 @@
 	editor = /usr/bin/vim
 	excludesfile = /Users/ldhanson2/.gitignore_global
 [push]
-	default = simple
+	default = matching
