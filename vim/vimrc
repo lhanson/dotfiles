@@ -1,8 +1,22 @@
+"set rtp+=
 set nocompatible    " Use Vim settings instead of vi. Must be first.
+
+" Setting up Vundle - the vim plugin blundler
+let installVundle=0
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo 'Installing vundle...'
+    echo ''
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    let installVundle=1
+endif
+
 " Next bit is to kick off Vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"set rtp+=~/.vim/bundle/vundle/powerline/powerline/bindings/vim/,~/.vim/bundle/vundle/
+call vundle#begin()
 """"" My installed bundles
 " VimScripts
 "Bundle 'FuzzyFinder'
@@ -10,15 +24,19 @@ Bundle 'VimClojure'
 Bundle 'L9'
 Bundle 'vimwiki'
 " GitHub
+Bundle 'kovisoft/slimv'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-foreplay'
+Bundle 'tpope/vim-fireplace'
 Bundle 'fholgado/minibufexpl.vim.git'
 Bundle 'wincent/Command-T.git'
-Bundle 'airblade/vim-gitgutter.git'
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+"Bundle 'airblade/vim-gitgutter.git'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/powerline'
 " Color schemes:
 Bundle 'vim-scripts/delek.vim'
 Bundle 'vim-scripts/inkpot'
@@ -26,6 +44,7 @@ Bundle 'vim-scripts/Professional-colorscheme-for-Vim'
 Bundle 'vim-scripts/pyte'
 Bundle 'vim-scripts/wombat256.vim'
 """"" End installed bundles
+call vundle#end()
 filetype plugin indent on
 " end Vundle config
 
@@ -48,10 +67,10 @@ if exists("+relativenumber")
 else
   set number
 endif
-let s:colorcol=80
-if exists("+colorcolumn")
-  execute "set colorcolumn=" . s:colorcol
-endif
+"let s:colorcol=80
+"if exists("+colorcolumn")
+"  execute "set colorcolumn=" . s:colorcol
+"endif
 
 """ Whitespace settings
 set expandtab       " Use spaces instead of tabs
@@ -90,14 +109,14 @@ cnoremap <C-g>  <C-c>
 
 """ GUI/colors stuff
 if &t_Co > 2 || has("gui_running")
-  set gfn=Consolas:h14 " set font when using colors or graphical vim
+  set gfn=Consolas\ for\ Powerline:h14 " set font when using colors or graphical vim
   syntax on     " syntax highlighting
   set hlsearch  " hilight last search pattern
   " change the status line based on mode
-  if version >= 700
-      au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
-      au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
-  endif
+"  if version >= 700
+"      au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
+"      au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
+"  endif
   highlight ColorColumn guibg=Gray26
 else
   highlight ColorColumn ctermbg=7
@@ -164,11 +183,16 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fuzzy_finder
-"let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|sw[po]|class|jar|war|DS_Store|pyc)$'
-"let g:fuf_dir_exclude  = '\v'
-"            \ . '|(^|[/\\])(\.(hg|git|bzr)($|[/\\])'
-"map <D-R> :FufFile **/<CR>
+" Powerline
+"python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages")
+"python from powerline.bindings.vim import source_plugin; source_plugin()
+"source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+"python from powerline.ext.vim import source_plugin; source_plugin()
+set laststatus=2
+let g:Powerline_theme="skwp"
+let g:Powerline_colorscheme="skwp"
+let g:Powerline_symbols = 'fancy'
+set t_Co=256
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>

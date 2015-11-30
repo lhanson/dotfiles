@@ -13,6 +13,7 @@ elif type -P brew &> /dev/null; then . `brew --prefix`/etc/bash_completion
 fi
 # Path suffixes to ignore when doing shell completion
 export FIGNORE=VS:svn
+export PATH=~/bin:$GRAILS_HOME/bin:/usr/local/bin:$PATH
 
 # Enable git completion if installed
 if [ -f ~/.git-completion ]; then 
@@ -46,6 +47,8 @@ set -o vi
 # enable extended globbing
 shopt -s  extglob
 
+export EDITOR=vim
+
 # Set aliases for interactive terminal use
 alias vi=vim
 alias rm='rm -i'
@@ -66,3 +69,5 @@ elif [[ `uname` =~ "Linux" ]]; then
 else
     alias ls='ls -G' 
 fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

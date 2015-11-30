@@ -1,6 +1,6 @@
 [user]
-    name = Lyle Hanson
-    email = lyle2.0@gmail.com
+	name = Lyle Hanson
+	email = lyle.hanson@wisc.edu
 [color]
     ui = auto
 [alias]
@@ -16,5 +16,14 @@
 [core]
 	editor = /usr/bin/vim
 	excludesfile = /Users/ldhanson2/.gitignore_global
+	autocrlf = input
 [push]
 	default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[pull]
+	rebase = true
