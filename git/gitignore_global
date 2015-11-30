@@ -9,3 +9,7 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
+# IntelliJ IDEA files #
+#######################
+.idea
+*.iml

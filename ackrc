@@ -1,1 +1,4 @@
 --ignore-dir=target/
+--ignore-dir=.idea/
+--type-set=idea:ext:iml
+--noidea
