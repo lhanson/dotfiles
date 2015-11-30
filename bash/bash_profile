@@ -15,6 +15,11 @@ fi
 export FIGNORE=VS:svn
 export PATH=~/bin:$GRAILS_HOME/bin:/usr/local/bin:$PATH
 
+# Start ssh-agent
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent -s`
+fi
+
 # Enable git completion if installed
 if [ -f ~/.git-completion ]; then 
     . ~/.git-completion;
