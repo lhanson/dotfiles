@@ -49,8 +49,11 @@ if [ -f ~/.git-completion ]; then
 fi
 
 # Set up Docker environment
-eval $(docker-machine env default)
-export DOCKER_PS1='$(__docker_machine_ps1 " [%s]")'
+which docker-machine &> /dev/null
+if [[ $? -eq 0 ]]; then
+    eval $(docker-machine env default)
+    export DOCKER_PS1='$(__docker_machine_ps1 " [%s]")'
+fi
 
 # Prompt silliness
 GREEN="\[\e[00;32m\]"
