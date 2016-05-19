@@ -15,7 +15,7 @@
 	account = lhanson
 [core]
 	editor = /usr/bin/vim
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/ldhanson2/.gitignore_global
 	autocrlf = input
 [push]
 	default = matching

@@ -48,13 +48,17 @@ if [ -f ~/.git-completion ]; then
     export GIT_PS1_SHOWUNTRACKEDFILES=true
 fi
 
+# Set up Docker environment
+eval $(docker-machine env default)
+export DOCKER_PS1='$(__docker_machine_ps1 " [%s]")'
+
 # Prompt silliness
 GREEN="\[\e[00;32m\]"
 BLUE="\[\e[01;34m\]"
 BLACK="\[\e[00;30m\]"
 WHITE="\[\e[01;37m\]"
 RED="\[\e[00;31m\]"
-export PS1="$GREEN\u@\h $WHITE\W$RED$GIT_PS1 $BLUE\[\e[00m\]➔  "
+export PS1="$GREEN\u@\h $WHITE\W$RED$GIT_PS1$DOCKER_PS1 $BLUE\[\e[00m\]➔  "
 
 # Store more history, ignoring dupes
 export HISTCONTROL=erasedups
@@ -79,10 +83,9 @@ alias cp='cp -i'
 alias l='ls -lAh'
 alias la='ls -a'
 alias ll='ls -l'
-alias m='ssh lhanson@my-dev.doit.wisc.edu'
 alias t='tail -f ~/log'
-alias gmaven='mvn archetype:generate -DarchetypeGroupId=org.codehaus.groovy.maven.archetypes -DarchetypeArtifactId=gmaven-archetype-basic'
 alias g=git
+alias dme='eval "$(docker-machine env)"'
 # Work around non-awesome Solaris 'ls' which lacks color
 if [[ `uname` =~ "SunOS" ]]; then
     alias ls='ls -F'
@@ -93,3 +96,9 @@ else
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/ldhanson2/.sdkman"
+[[ -s "/Users/ldhanson2/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ldhanson2/.sdkman/bin/sdkman-init.sh"
