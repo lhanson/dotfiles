@@ -89,6 +89,8 @@ alias ll='ls -l'
 alias t='tail -f ~/log'
 alias g=git
 alias dme='eval "$(docker-machine env)"'
+# Remove exited docker containers
+alias drm='docker rm $(docker ps -q -f status=exited)'
 # Work around non-awesome Solaris 'ls' which lacks color
 if [[ `uname` =~ "SunOS" ]]; then
     alias ls='ls -F'
