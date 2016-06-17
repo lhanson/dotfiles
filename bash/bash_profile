@@ -89,7 +89,7 @@ alias ll='ls -l'
 alias t='tail -f ~/log'
 alias g=git
 # Show memory hogs
-alias mem='ps -e -orss=,args= | sort -b -k1,1n | pr -TW$COLUMNS'
+alias mem='ps -e -orss=,pid=,args= | sort -b -k1,1n | pr -TW$COLUMNS'
 alias dme='eval "$(docker-machine env)"'
 # Remove exited docker containers
 alias drm='docker rm $(docker ps -q -f status=exited)'
