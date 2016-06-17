@@ -49,11 +49,11 @@ if [ -f ~/.git-completion ]; then
 fi
 
 # Set up Docker environment
-which docker-machine &> /dev/null
-if [[ $? -eq 0 ]]; then
-    eval $(docker-machine env default)
-    export DOCKER_PS1='$(__docker_machine_ps1 " [%s]")'
-fi
+#which docker-machine &> /dev/null
+#if [[ $? -eq 0 ]]; then
+#    eval $(docker-machine env default)
+#    export DOCKER_PS1='$(__docker_machine_ps1 " [%s]")'
+#fi
 
 # Prompt silliness
 GREEN="\[\e[00;32m\]"
@@ -88,6 +88,8 @@ alias la='ls -a'
 alias ll='ls -l'
 alias t='tail -f ~/log'
 alias g=git
+# Show memory hogs
+alias mem='ps -e -orss=,args= | sort -b -k1,1n | pr -TW$COLUMNS'
 alias dme='eval "$(docker-machine env)"'
 # Remove exited docker containers
 alias drm='docker rm $(docker ps -q -f status=exited)'
