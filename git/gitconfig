@@ -27,3 +27,5 @@
 	trustExitCode = true
 [pull]
 	rebase = true
+[commit]
+	template = /Users/ldhanson2/.stCommitMsg

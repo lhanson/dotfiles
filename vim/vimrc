@@ -34,6 +34,8 @@ Bundle 'tpope/vim-fireplace'
 Bundle 'fholgado/minibufexpl.vim.git'
 Bundle 'wincent/Command-T.git'
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 "Bundle 'airblade/vim-gitgutter.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/powerline'
