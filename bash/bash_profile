@@ -41,7 +41,7 @@ fi
 if [ -f ~/.git-completion ]; then 
     . ~/.git-completion;
     # Show current branch in prompt
-    GIT_PS1='$(__git_ps1 " (%s)")'
+    GIT_PS1='$(__git_ps1 " (%s)")'
     #if ! [ -z "$GIT_PS1" ]; then GIT_PS1=" $GIT_PS1 "; fi
     export GIT_PS1_SHOWDIRTYSTATE=true
     export GIT_PS1_SHOWSTASHSTATE=true
@@ -79,7 +79,12 @@ shopt -s  extglob
 export EDITOR=vim
 
 # Set aliases for interactive terminal use
-alias vi=vim
+type nvim >/dev/null 2>&01
+if [[ $? -eq 0 ]]; then
+    alias vi=nvim
+else
+    alias vi=vim
+fi
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
