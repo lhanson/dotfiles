@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-eval "$DIR/lib.py $@"
+eval "$DIR/lib.py"
 if [ $? -eq 0 ]; then
 	printf "\nReloading ~/.bash_profile\n"
 	source ~/.bash_profile
