@@ -47,13 +47,6 @@ if [ -f ~/.git-completion ]; then
     export GIT_PS1_SHOWUNTRACKEDFILES=true
 fi
 
-# Set up Docker environment
-#which docker-machine &> /dev/null
-#if [[ $? -eq 0 ]]; then
-#    eval $(docker-machine env default)
-#    export DOCKER_PS1='$(__docker_machine_ps1 " [%s]")'
-#fi
-
 # Prompt silliness
 GREEN="\[\e[00;32m\]"
 BLUE="\[\e[01;34m\]"
@@ -94,9 +87,9 @@ alias t='tail -f ~/log'
 alias g=git
 # Show memory hogs
 alias mem='ps -e -orss=,pid=,args= | sort -b -k1,1n | pr -TW$COLUMNS'
-alias dme='eval "$(docker-machine env)"'
 # Remove exited docker containers
 alias drm='docker rm $(docker ps -q -f status=exited)'
+
 if [[ `uname` =~ "SunOS" ]]; then
     # Work around non-awesome Solaris 'ls' which lacks color
     alias ls='ls -F'
@@ -106,12 +99,20 @@ elif [[ `uname` =~ "Linux" ]]; then
 else
     alias ls='ls -G' 
 fi
+
 # Common Git workflows
 function merge() {
     git checkout master && \
         git pull && \
         git branch -d $1
 }
+
+# Remap keyboards if necessary
+karabiner_toggle_pid=$( pgrep -f toggle-karabiner )
+if [[ $OSTYPE == darwin* && -z "$karabiner_toggle_pid" ]]; then
+    echo "Starting Karabiner profile toggler"
+    (toggle-karabiner.sh &)
+fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 

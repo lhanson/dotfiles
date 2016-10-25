@@ -16,16 +16,17 @@ backupDirName = dotfilesDirName + "/backup"
 # Key is the dotfile in the home directory, the value is location in the
 # dotfiles directory where the file will be stored (and linked to)
 fileMap = dict([
-                (".ackrc",            "ackrc"),
-                (".bash_profile",     "bash/bash_profile"),
-                (".config",           "config"),
-                (".gvimrc",           "vim/gvimrc"),
-                (".git-completion",   "git/git-completion.bash"),
-                (".gitconfig",        "git/gitconfig"),
-                (".gitignore_global", "git/gitignore_global"),
-                (".screenrc",         "screenrc"),
-                (".vim",              "vim"),
-                (".vimrc",            "vim/vimrc"),
+                (".ackrc",                  "ackrc"),
+                (".bash_profile",           "bash/bash_profile"),
+                ("bin/toggle-karabiner.sh", "bin/toggle-karabiner.sh"),
+                (".config",                 "config"),
+                (".gvimrc",                 "vim/gvimrc"),
+                (".git-completion",         "git/git-completion.bash"),
+                (".gitconfig",              "git/gitconfig"),
+                (".gitignore_global",       "git/gitignore_global"),
+                (".screenrc",               "screenrc"),
+                (".vim",                    "vim"),
+                (".vimrc",                  "vim/vimrc"),
                 ])
 
 if not os.path.exists(backupDirName):
