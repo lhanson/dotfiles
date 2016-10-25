@@ -111,7 +111,7 @@ function merge() {
 karabiner_toggle_pid=$( pgrep -f toggle-karabiner )
 if [[ $OSTYPE == darwin* && -z "$karabiner_toggle_pid" ]]; then
     echo "Starting Karabiner profile toggler"
-    (toggle-karabiner.sh &)
+    (~/bin/toggle-karabiner.sh &)
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
