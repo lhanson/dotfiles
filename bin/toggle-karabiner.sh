@@ -13,7 +13,7 @@ function conf_enabled() {
 }
 
 while true; do
-	if [[ `ioreg -p IOUSB -l -w 0 | grep -qi "\"idProduct\" = $productId$"` -eq 0 ]]; then
+	if [[ `ioreg -p IOUSB -l -w 0 | grep -qi "\"idProduct\" = $productId$"` == 0 ]]; then
 		# HHKB gets mappings right, no need to remap. Disable Karabiner profile.
 		if conf_enabled; then
 			sed -i '' 's/true/false/g' "$karabiner_conf"
