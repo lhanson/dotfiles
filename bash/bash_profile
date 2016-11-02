@@ -47,6 +47,9 @@ if [ -f ~/.git-completion ]; then
     export GIT_PS1_SHOWUNTRACKEDFILES=true
 fi
 
+# Adjust for a dark background. See http://geoff.greer.fm/lscolors/
+LSCOLORS='gxfxcxdxbxegedabagacad' ; export LSCOLORS
+
 # Prompt silliness
 GREEN="\[\e[00;32m\]"
 BLUE="\[\e[01;34m\]"
@@ -90,7 +93,7 @@ alias mem='ps -e -orss=,pid=,args= | sort -b -k1,1n | pr -TW$COLUMNS'
 # Remove exited docker containers
 alias drmc='docker rm $(docker ps -q -f status=exited)'
 # Remove unused docker containers
-alias drmi='docker images | grep " [months|days|weeks]* ago" | awk '{print $3}' | xargs docker rmi'
+alias drmi="docker images | grep \" [months|days|weeks]* ago\" | awk \"{print $3}\" | xargs docker rmi"
 # 'docker stats' show container name instead of ID (pending fix of https://github.com/docker/docker/issues/20973)
 alias ds='while true; do TEXT=$(docker stats --no-stream $(docker ps --format={{.Names}})); sleep 0.1; clear; echo "$TEXT"; done'
 
@@ -110,13 +113,6 @@ function merge() {
         git pull && \
         git branch -d $1
 }
-
-# Remap keyboards if necessary
-karabiner_toggle_pid=$( pgrep -f toggle-karabiner )
-if [[ $OSTYPE == darwin* && -z "$karabiner_toggle_pid" ]]; then
-    echo "Starting Karabiner profile toggler"
-    (~/bin/toggle-karabiner.sh &)
-fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
