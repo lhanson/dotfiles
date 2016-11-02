@@ -21,8 +21,8 @@ the environment on the new host. Run that like so:
 That will set up passwordless login and copy the GitHub SSH key to the new host, then
 clone a new copy of this repository, and finally it will call `setup.sh` on the new host
 to initialize all of the linked dotfiles. Then you're up and running there on pretty much
-even footing as the host you seeded it from, except that your SSH key for passwordless login
-is not copied to the new host.
+even footing as the host you seeded it from, except that your private SSH key for
+passwordless login is not copied to the new host.
 
 TODO
 ----
