@@ -13,12 +13,12 @@ dotfilesDirName = os.path.abspath(os.path.dirname(__file__))
 backupDirName = dotfilesDirName + "/backup"
 
 # Paths from the home directory which will be mapped into this repo.
-# Key is the dotfile in the home directory, the value is location in the
+# Key is the file in the home directory, the value is location in the
 # dotfiles directory where the file will be stored (and linked to)
 fileMap = dict([
                 (".ackrc",                  "ackrc"),
                 (".bash_profile",           "bash/bash_profile"),
-                ("bin/toggle-karabiner.sh", "bin/toggle-karabiner.sh"),
+                ("bin/ack",                 "bin/ack"),
                 (".config",                 "config"),
                 (".gvimrc",                 "vim/gvimrc"),
                 (".git-completion",         "git/git-completion.bash"),
