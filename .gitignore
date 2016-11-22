@@ -1,3 +1,9 @@
+backup
+config/configstore/bower-github.yml
+config/nvim/.netrwhist
+config/nvim/autoload
+config/nvim/plugged
+config/nvim
 vim/bundle
 vim/.vimrc.swp
 vim/.netrwhist
