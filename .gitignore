@@ -1,9 +1,12 @@
 backup
 config/configstore/bower-github.yml
+config/gtk-2.0/
+config/karabiner/
 config/nvim/.netrwhist
 config/nvim/autoload
 config/nvim/plugged
 config/nvim
+config/UDP Software/
 vim/bundle
 vim/.vimrc.swp
 vim/.netrwhist

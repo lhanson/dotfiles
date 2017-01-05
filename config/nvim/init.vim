@@ -15,7 +15,8 @@ endif
 set list                " Show problematic characters.
 
 " Also highlight all tabs and trailing whitespace characters.
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+"highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+highlight ExtraWhitespace ctermbg=darkgray guibg=darkgreen
 match ExtraWhitespace /\s\+$\|\t/
 
 " Relative numbering
