@@ -28,3 +28,5 @@
 [pull]
 	rebase = true
 [commit]
+[commit]
+	template = /Users/ldhanson2/.stCommitMsg
