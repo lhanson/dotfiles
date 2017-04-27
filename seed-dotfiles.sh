@@ -17,7 +17,7 @@ else
 
 	ssh $1 <<-EOF
 		echo 'eval \`ssh-agent -s\` && ssh-add ~/.ssh/github' > /tmp/ssh-agent 
-		echo 'source /tmp/ssh-agent;git clone git@github.com:lhanson/dotfiles.git .dotfiles && .dotfiles/setup.sh' >> .bash_profile
+		echo 'source /tmp/ssh-agent;git clone https://github.com/lhanson/dotfiles.git .dotfiles && .dotfiles/setup.sh' >> .bash_profile
 	EOF
 
 	echo "Logging you back in to initialize the new environment..."
