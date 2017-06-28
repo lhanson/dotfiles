@@ -13,7 +13,7 @@ elif type -P brew &> /dev/null; then . `brew --prefix`/etc/bash_completion
 fi
 # Path suffixes to ignore when doing shell completion
 export FIGNORE=VS:svn
-export PATH=~/bin:$GRAILS_HOME/bin:/usr/local/bin:$PATH
+export PATH=/chub/bin:~/bin:$GRAILS_HOME/bin:/usr/local/bin:$PATH
 
 SSH_ENV="$HOME/.ssh/environment"
 
