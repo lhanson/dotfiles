@@ -1,12 +1,15 @@
 backup
+config/FastoRedis/
+config/UDP Software/
 config/configstore/bower-github.yml
+config/configstore/update-notifier-*.json
 config/gtk-2.0/
 config/karabiner/
 config/nvim/.netrwhist
 config/nvim/autoload
 config/nvim/plugged
 config/nvim
-config/UDP Software/
+config/wireshark
 vim/bundle
 vim/.vimrc.swp
 vim/.netrwhist
