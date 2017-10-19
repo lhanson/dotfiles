@@ -111,6 +111,8 @@ else
     alias ls='ls -G' 
 fi
 
+alias activemq="docker run --name='activemq' --interactive --rm -p 8161:8161 -p 61616:61616 -p 61613:61613 webcenter/activemq:5.14.3"
+
 # Common Git workflows
 function merge() {
     git checkout master && \
