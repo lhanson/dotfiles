@@ -3,7 +3,7 @@
 "===============================================================================
 "set relativenumber " show relative line numbers
 "set expandtab
-"set shiftwidth=4
+set shiftwidth=4
 set tabstop=4
 set smartcase     " search is case-insensitive unless the query has caps
 
