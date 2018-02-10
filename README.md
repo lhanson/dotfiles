@@ -9,7 +9,13 @@ Prerequisites
 
 In order to install this environment onto a new host, Python must be available.
 
-Installing on a new host
+Installing
+----------
+Log into your fresh new shell environment and run this guy:
+
+    git clone https://github.com/lhanson/dotfiles.git .dotfiles && ./dotfiles/setup.s
+
+Installing on a remote host
 ------------------------
 
 This is a little bit of chicken-and-egg; you need this repository on a machine containing
