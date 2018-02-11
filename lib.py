@@ -27,6 +27,7 @@ fileMap = dict([
                 (".screenrc",               "screenrc"),
                 (".vim",                    "vim"),
                 (".vimrc",                  "vim/vimrc"),
+                (".Xresources",             "X/Xresources"),
                 ])
 
 if not os.path.exists(backupDirName):

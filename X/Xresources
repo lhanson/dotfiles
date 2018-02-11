@@ -1,0 +1,5 @@
+URxvt.font: xft:Font Awesome:size=10,xft:monofur For Powerline:size=11:hinting=True;antialias:True,xft:PowerlineSymbols
+
+! special
+*.foreground:	#c5c8c6
+*.background:	#1d1f21
