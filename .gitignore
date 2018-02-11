@@ -3,6 +3,7 @@ config/FastoRedis/
 config/UDP Software/
 config/configstore/bower-github.yml
 config/configstore/update-notifier-*.json
+config/google-chrome
 config/gtk-2.0/
 config/karabiner/
 config/nvim/.netrwhist
