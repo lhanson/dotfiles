@@ -9,6 +9,9 @@ Xft.rgba: rgb
 
 ! URxvt
 URxvt.font: xft:Font Awesome:size=10,xft:monofur For Powerline:size=11:hinting=True;antialias:True,xft:PowerlineSymbols
+URxvt*background: rgba:0000/0000/0200/c800
+URxvt*depth: 32
+URxvt.scrollBar: false
 
 ! special
 *.foreground:	#c5c8c6
