@@ -1,8 +1,10 @@
 backup
 config/FastoRedis/
+config/Thunar
 config/UDP Software/
 config/configstore/bower-github.yml
 config/configstore/update-notifier-*.json
+config/dconf
 config/google-chrome
 config/gtk-2.0/
 config/karabiner/
@@ -11,6 +13,7 @@ config/nvim/autoload
 config/nvim/plugged
 config/nvim
 config/wireshark
+config/xfce4
 vim/bundle
 vim/.vimrc.swp
 vim/.netrwhist
