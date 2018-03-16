@@ -112,6 +112,7 @@ else
 fi
 
 alias activemq="docker run --name='activemq' --interactive --rm -p 8161:8161 -p 61616:61616 -p 61613:61613 webcenter/activemq:5.14.3"
+alias graphite="docker run --name graphite   --interactive --rm -p 80:80 -p 2003-2004:2003-2004 -p 2023-2024:2023-2024 -p 8125:8125/udp -p 8126:8126 hopsoft/graphite-statsd"
 
 # Common Git workflows
 function merge() {
