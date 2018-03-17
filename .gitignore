@@ -1,5 +1,6 @@
 backup
 config/FastoRedis/
+config/Slack
 config/Thunar
 config/UDP Software/
 config/configstore/bower-github.yml
