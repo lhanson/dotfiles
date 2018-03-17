@@ -1,18 +1,23 @@
 backup
-config/FastoRedis/
+config/FastoRedis
 config/Slack
 config/Thunar
 config/UDP Software/
 config/configstore/bower-github.yml
 config/configstore/update-notifier-*.json
 config/dconf
+config/discord
+config/glade*
 config/google-chrome
 config/gtk-2.0/
+config/hiri.com
 config/karabiner/
+config/menus
 config/nvim/.netrwhist
 config/nvim/autoload
 config/nvim/plugged
 config/nvim
+config/pikaur.conf
 config/wireshark
 config/xfce4
 vim/bundle
