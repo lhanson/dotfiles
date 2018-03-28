@@ -1,4 +1,6 @@
 # Executed from an interactive shell, once per login.
+# See .bashrc for non-interactive commands run each time
+# the shell is invoked.
 
 # Inherit .profile
 if [ -f ~/.profile ]; then . ~/.profile; fi
@@ -13,6 +15,112 @@ fi
 # Path suffixes to ignore when doing shell completion
 export FIGNORE=VS:svn
 export PATH=/chub/bin:~/bin:$GRAILS_HOME/bin:/usr/local/bin:$PATH
+
+SSH_ENV="$HOME/.ssh/environment"
+
+function start_agent {
+     echo "Initialising new SSH agent..."
+     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+     chmod 600 "${SSH_ENV}"
+     . "${SSH_ENV}" > /dev/null
+     /usr/bin/ssh-add;
+}
+
+# Source SSH settings, if applicable
+if [ -f "${SSH_ENV}" ]; then
+     . "${SSH_ENV}" > /dev/null
+     #ps ${SSH_AGENT_PID} doesn't work under cywgin
+     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+         start_agent;
+     }
+else
+     start_agent;
+fi
+
+# Enable git completion if installed
+if [ -f ~/.git-completion ]; then 
+    . ~/.git-completion;
+    # Show current branch in prompt
+    GIT_PS1='$(__git_ps1 " (%s)")'
+    #if ! [ -z "$GIT_PS1" ]; then GIT_PS1=" $GIT_PS1 "; fi
+    export GIT_PS1_SHOWDIRTYSTATE=true
+    export GIT_PS1_SHOWSTASHSTATE=true
+    export GIT_PS1_SHOWUNTRACKEDFILES=true
+fi
+
+# Adjust for a dark background. See http://geoff.greer.fm/lscolors/
+LSCOLORS='gxfxcxdxbxegedabagacad' ; export LSCOLORS
+
+# Prompt silliness
+GREEN="\[\e[00;32m\]"
+BLUE="\[\e[01;34m\]"
+BLACK="\[\e[00;30m\]"
+WHITE="\[\e[01;37m\]"
+RED="\[\e[00;31m\]"
+export PS1="$GREEN\u@\h $WHITE\W$RED$GIT_PS1$DOCKER_PS1 $BLUE\[\e[00m\]➔  "
+
+# Store more history, ignoring dupes
+export HISTCONTROL=erasedups
+export HISTSIZE=1000
+shopt -s histappend
+
+# Vim, everywhere.
+export EDITOR=vim
+
+# vi-style command editing
+set -o vi
+# enable extended globbing
+shopt -s  extglob
+
+export EDITOR=vim
+
+# Set aliases for interactive terminal use
+type nvim >/dev/null 2>&01
+if [[ $? -eq 0 ]]; then
+    alias vi=nvim
+else
+    alias vi=vim
+fi
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias l='ls -lAh'
+alias la='ls -a'
+alias ll='ls -l'
+alias t='tail -f ~/log'
+alias g=git
+# Show memory hogs
+alias mem='ps -e -orss=,pid=,args= | sort -b -k1,1n | pr -TW$COLUMNS'
+# Remove exited docker containers
+alias drmc='docker rm $(docker ps -q -f status=exited)'
+# Remove unused docker containers
+alias drmi="docker images | grep \" [months|days|weeks]* ago\" | awk \"{print $3}\" | xargs docker rmi"
+# 'docker stats' show container name instead of ID (pending fix of https://github.com/docker/docker/issues/20973)
+alias ds='while true; do TEXT=$(docker stats --no-stream $(docker ps --format={{.Names}})); sleep 0.1; clear; echo "$TEXT"; done'
+# Maven - display dependency updates
+alias ddu='mvn versions:display-dependency-updates'
+# Maven - display plugin updates
+alias dpu='mvn versions:display-plugin-updates'
+
+if [[ `uname` =~ "SunOS" ]]; then
+    # Work around non-awesome Solaris 'ls' which lacks color
+    alias ls='ls -F'
+elif [[ `uname` =~ "Linux" ]]; then
+    alias ls='ls --color=auto' 
+    alias docker='sudo docker'
+else
+    alias ls='ls -G' 
+fi
+
+alias activemq="docker run --name='activemq' --interactive --rm -p 8161:8161 -p 61616:61616 -p 61613:61613 webcenter/activemq"
+alias graphite="docker run --name graphite   --interactive --rm -p 80:80 -p 2003-2004:2003-2004 -p 2023-2024:2023-2024 -p 8125:8125/udp -p 8126:8126 hopsoft/graphite-statsd"
+
+# Common Git workflows
+function merge() {
+    git checkout master && \
+        git pull && \
+        git branch -d $1
+}
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
