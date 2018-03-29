@@ -24,6 +24,7 @@ fileMap = dict([
                 (".git-completion",         "git/git-completion.bash"),
                 (".gitconfig",              "git/gitconfig"),
                 (".gitignore_global",       "git/gitignore_global"),
+                (".inputrc",                "inputrc"),
                 (".screenrc",               "screenrc"),
                 (".vim",                    "vim"),
                 (".vimrc",                  "vim/vimrc"),

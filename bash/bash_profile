@@ -67,8 +67,6 @@ shopt -s histappend
 # Vim, everywhere.
 export EDITOR=vim
 
-# vi-style command editing
-set -o vi
 # enable extended globbing
 shopt -s  extglob
 

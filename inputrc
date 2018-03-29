@@ -1,0 +1,36 @@
+$include /etc/inputrc
+
+################################################################################
+# Autocompletion
+################################################################################
+
+# Show completions using colors to indicate file types (via LS_COLORS)
+set colored-stats On
+# Completions are appended with characters indicating file types from stat
+set visible-stats On
+# Use ellipsis to truncate lengthy completions
+set completion-prefix-display-length 3
+# Mark completions which are symlinks to directories
+set mark-symlinked-directories On
+# Faster completion
+set show-all-if-ambiguous On
+# Colored completion
+set colored-completion-prefix On
+# Color the common prefix in menu-complete
+set menu-complete-display-prefix On
+
+
+################################################################################
+# Vi(m) stuff
+################################################################################
+
+set editing-mode vi
+set keymap vi
+
+# Indicate current editing mode
+set show-mode-in-prompt On
+## Mode indicators, see https://stackoverflow.com/a/42107711/80144
+# Cursor is a steady bar in insert mode
+set vi-ins-mode-string \1\e[6 q\2
+# Cursor is a steady block in command mode
+set vi-cmd-mode-string \1\e[2 q\2
