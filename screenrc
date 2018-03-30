@@ -1,3 +1,0 @@
-# Start screen with bash as a login shell so interactive settings are loaded
-shell -/bin/bash
-defscrollback 1000

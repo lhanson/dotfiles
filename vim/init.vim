@@ -1,1 +1,0 @@
-/Users/ldhanson2/dotfiles/config/nvim/init.vim

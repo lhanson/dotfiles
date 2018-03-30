@@ -1,27 +1,6 @@
+# Files which would conflict with stow are copied here
 backup
-config/FastoRedis
-config/Slack
-config/Thunar
-config/UDP Software/
-config/configstore/bower-github.yml
-config/configstore/update-notifier-*.json
-config/dconf
-config/discord
-config/glade*
-config/google-chrome
-config/gtk-2.0/
-config/hiri.com
-config/karabiner/
-config/menus
-config/nvim/.netrwhist
-config/nvim/autoload
-config/nvim/plugged
-config/nvim
-config/pikaur.conf
-config/wireshark
-config/xfce4
-vim/bundle
-vim/.vimrc.swp
-vim/.netrwhist
-vim/*.un~
-.DS_Store
+# Used by setup.sh to bootstrap stow itself
+stow
+# Too big at the moment, not sure if I want to haul them around
+wallpapers

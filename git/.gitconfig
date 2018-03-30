@@ -15,7 +15,7 @@
 	account = lhanson
 [core]
 	editor = /usr/bin/vim
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/git/.gitignore_global
 	autocrlf = input
 [push]
 	default = matching
@@ -27,6 +27,3 @@
 	trustExitCode = true
 [pull]
 	rebase = true
-[commit]
-[commit]
-	template = /Users/ldhanson2/.stCommitMsg

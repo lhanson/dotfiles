@@ -16,14 +16,52 @@ fi
 export FIGNORE=VS:svn
 export PATH=/chub/bin:~/bin:$GRAILS_HOME/bin:/usr/local/bin:$PATH
 
+# Directory where dotfiles are managed with stow
+DOTFILES_DIR=~/.dotfiles
+
 SSH_ENV="$HOME/.ssh/environment"
 
+################################################################################
+# OS-specific settings
+################################################################################
+if [[ `uname` =~ "SunOS" ]]; then
+    # Work around non-awesome Solaris 'ls' which lacks color
+    LS_ARGS='-F'
+elif [[ `uname` =~ "Linux" ]]; then
+    LS_ARGS='--color=auto'
+    alias docker='sudo docker'
+else
+    LS_ARGS='-G'
+fi
+
+# Show dotfiles by default within certain directories
+function ls() {
+    local path
+    if [[ "$#" -eq 0 || ${@:$#} == -* ]]; then
+	path="$PWD" # either no arguments or the last argument is an option, use cwd
+    else
+        path=${@:$#} # use last argument
+    fi
+
+    case $(realpath $path)/ in
+        $DOTFILES_DIR/*)
+            command ls $LS_ARGS -a $@
+	    ;;
+	*)
+            command ls $LS_ARGS $@
+	    ;;
+    esac
+}
+alias l='ls -lAh'
+alias la='ls -a'
+alias ll='ls -l'
+
 function start_agent {
-     echo "Initialising new SSH agent..."
-     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+     mkdir -p $HOME/.ssh
+     ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
      chmod 600 "${SSH_ENV}"
      . "${SSH_ENV}" > /dev/null
-     /usr/bin/ssh-add;
+     #ssh-add
 }
 
 # Source SSH settings, if applicable
@@ -79,13 +117,12 @@ if [[ $? -eq 0 ]]; then
 else
     alias vi=vim
 fi
+
+# Use interactive versions of destructive operations
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
-alias l='ls -lAh'
-alias la='ls -a'
-alias ll='ls -l'
-alias t='tail -f ~/log'
+
 alias g=git
 # Show memory hogs
 alias mem='ps -e -orss=,pid=,args= | sort -b -k1,1n | pr -TW$COLUMNS'
@@ -99,16 +136,6 @@ alias ds='while true; do TEXT=$(docker stats --no-stream $(docker ps --format={{
 alias ddu='mvn versions:display-dependency-updates'
 # Maven - display plugin updates
 alias dpu='mvn versions:display-plugin-updates'
-
-if [[ `uname` =~ "SunOS" ]]; then
-    # Work around non-awesome Solaris 'ls' which lacks color
-    alias ls='ls -F'
-elif [[ `uname` =~ "Linux" ]]; then
-    alias ls='ls --color=auto' 
-    alias docker='sudo docker'
-else
-    alias ls='ls -G' 
-fi
 
 alias activemq="docker run --name='activemq' --interactive --rm -p 8161:8161 -p 61616:61616 -p 61613:61613 webcenter/activemq"
 alias graphite="docker run --name graphite   --interactive --rm -p 80:80 -p 2003-2004:2003-2004 -p 2023-2024:2023-2024 -p 8125:8125/udp -p 8126:8126 hopsoft/graphite-statsd"
