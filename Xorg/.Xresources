@@ -1,25 +1,28 @@
 ! fontconfig
-Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
-
+Xft.autohint:	0
+Xft.lcdfilter:	lcddefault
+Xft.hintstyle:	hintslight
+Xft.hinting:	1
+Xft.antialias:	1
+Xft.rgba:	rgb
 
 ! URxvt
-#URxvt.font: xft:Font Awesome:size=10,xft:monofur For Powerline:size=11:hinting=True;antialias:True,xft:PowerlineSymbols
-#URxvt.font: xft:monofur For Powerline:size=11:hinting=True;antialias:True,xft:PowerlineSymbols
-#URxvt*background: rgba:0000/0000/0200/c800
-URxvt*depth: 32
+!URxvt.font: xft:Inconsolata for Powerline:pixelsize=18,\
+!            xft:Literation Mono Powerline:pixelsize=18,\
+!            xft:DejaVu Sans Mono for Powerline:pixelsize=20,\
+!            xft:Noto Sans:pixelsize=18,\
+!            xft:LastResort:pixelsize=18,\
+!            -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*,\
+!			-misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+! fontconfig alias, particular font is defined in ~/.config/fontconfig/fonts.conf
+URxvt.font: xft:monospace:pixelsize=18
+
 URxvt.scrollBar: false
 URxvt.transparent: true
 URxvt.shading: 20
-URxvt.keysym.Control-V: eval:paste_clipboard
-URxvt.keysym.Control-C: eval:selection_to_clipboard
-#URxvt.internalBorder: 10
-#URxvt.externalBorder: 10
+! Might be needed to correct rendering of certain fonts
+URxvt.letterSpace: -1
 
-! special
+! Colors
 *.foreground:	#c5c8c6
 *.background:	#1d1f21
