@@ -1,0 +1,10 @@
+"###############################################################################
+" vimrc - Main entry point to other configs
+"###############################################################################
+
+" Plugin management
+source ~/.config/vim/plugins.vim
+" Basic settings
+source ~/.config/vim/settings.vim
+" Text formatting
+source ~/.config/vim/text-format.vim
