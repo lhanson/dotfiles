@@ -1,6 +1,10 @@
-# Bash config
+# Test on OS X
 
-[ ] Modularize .bash_profile/bashrc functions; per OS, per host, etc.
+[ ] Git completion seems to be built into the arch package, so I
+    commented out the bit in .bashrc where I specifically look for
+	`~/.git-completion`. If that's still needed, add it to the
+	setup script.
+
 
 # Setup script: short-term wins
 

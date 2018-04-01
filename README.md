@@ -7,6 +7,10 @@ clean by only installing things which will actually be useful on the particular
 host you're on. Clutter is kept to a minimum by adhering to the
 [XDG Base Directory Specification](https://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
+Another major principle is to keep units of functionality separate, even within
+a given program. For example, bash configuration is split up into separate
+files which are sourced as needed rather than constantly appended into an
+unreadable monolith.
 
 ## Prerequisites
 
@@ -68,6 +72,14 @@ an application's shoes and see what fontconfig is telling it.
 
 As an overview/reminder of how individual applications manage their configs,
 here are more specific descriptions of relevant programs.
+
+### Bash
+
+Login (`.bash_profile`) and interactive (`.bashrc`) scripts are very simple,
+merely sourcing the appropriate individual configuration units located in
+`$XDG_CONFIG_HOME/bash`[1](https://chr4.org/blog/2014/09/10/conf-dot-d-like-directories-for-zsh-slash-bash-dotfiles/).
+
+Confused about what loads when? [Check this out](https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/).
 
 ### Vim
 
