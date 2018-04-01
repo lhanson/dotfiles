@@ -2,9 +2,14 @@
 " text-format.vim - Indentation, whitespace, visual formatting
 "###############################################################################
 
+" Indentation with purely hard tabs
+set shiftwidth=4
 set tabstop=4
 
-" show whitespace characters
+" Don't wrap long lines by default
+set nowrap
+
+" Show whitespace characters
 set list
 if has("multi_byte")
 	" enable Unicode
@@ -15,5 +20,5 @@ if has("multi_byte")
 	set listchars=tab:▸\ ,eol:¬
 endif
 
-" show right margin
+" Show right margin
 set colorcolumn=80

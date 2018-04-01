@@ -12,6 +12,8 @@ let g:netrw_home=$XDG_CACHE_HOME.'/vim'
 filetype plugin indent on
 " Enable syntax highlighting
 syntax enable
+" Enable switching buffers without saving the current one
+set hidden
 
 " Show line numbers
 if exists("+relativenumber")
