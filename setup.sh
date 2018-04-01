@@ -102,6 +102,7 @@ stow readline
 ################################################################################
 printf "\n\n###### detecting conditional packages\n"
 if_installed i3 i3
+if_installed fc-match fontconfig
 if_installed nvim nvim
 if_installed vim vim
 
@@ -122,6 +123,7 @@ if is_installed X; then
 	printf "\n\n###### installing Xorg packages\n"
 	stow gtk-3.0
 	stow mimeapps
+	stow Xorg
 fi
 
 
