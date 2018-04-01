@@ -1,15 +1,18 @@
 # Bash config
 
-[ ] Modularize .bash_profile functions; per OS, per host, etc.
+[ ] Modularize .bash_profile/bashrc functions; per OS, per host, etc.
 
 # Setup script: short-term wins
 
-[ ] stow i3
-
-[ ] stow i3blocks
-
 [ ] Have the setup script optionally take a remote user/hostname as an argument,
     making `seed-dotfiles.sh` redundant.
+
+
+# Theming
+
+[ ] Abstract theme colors from Xresources by referencing an external
+		link to the current theme.
+		https://wiki.archlinux.org/index.php/x_resources#Load_resource_file
 
 
 # Setup script: larger improvements
