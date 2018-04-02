@@ -3,13 +3,15 @@
 "###############################################################################
 
 " Managing plugins with dein: https://github.com/Shougo/dein.vim
-set runtimepath+=/home/ldh/.local/share/vim/dein.vim
+set runtimepath+=$XDG_DATA_HOME/vim/dein.vim
 
-if dein#load_state('/home/ldh/.cache/dein')
-  call dein#begin('/home/ldh/.cache/dein')
+let s:dein_cache=$XDG_CACHE_HOME . '/vim/dein'
+
+if dein#load_state(s:dein_cache)
+  call dein#begin(s:dein_cache)
 
   " Let dein manage dein
-  call dein#add('/home/ldh/.local/share/vim/dein.vim')
+  call dein#add('$XDG_DATA_HOME/vim/dein.vim')
 
   "##############################
   " Add or remove plugins here: "
