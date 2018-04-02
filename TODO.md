@@ -1,22 +1,14 @@
-# Test on OS X
+# Theming
 
-[ ] Git completion seems to be built into the arch package, so I
-    commented out the bit in .bashrc where I specifically look for
-	`~/.git-completion`. If that's still needed, add it to the
-	setup script.
+[ ] Abstract theme colors from Xresources by referencing an external
+		link to the current theme.
+		https://wiki.archlinux.org/index.php/x_resources#Load_resource_file
 
 
 # Setup script: short-term wins
 
 [ ] Have the setup script optionally take a remote user/hostname as an argument,
     making `seed-dotfiles.sh` redundant.
-
-
-# Theming
-
-[ ] Abstract theme colors from Xresources by referencing an external
-		link to the current theme.
-		https://wiki.archlinux.org/index.php/x_resources#Load_resource_file
 
 
 # Setup script: larger improvements
