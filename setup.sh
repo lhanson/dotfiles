@@ -44,7 +44,7 @@ function stow {
 		PATH="$PATH:$HOME/bin"
 	fi
 	echo
-	indent "command stow -vv --stow $1" $1
+	indent "command stow -vv --restow $1" $1
 }
 
 
@@ -91,6 +91,12 @@ if [[ -f $HOME/.bash_profile ]]; then
 	mkdir -p $STOW_DIR/backup
 	echo ".*" > $STOW_DIR/backup/.stow-local-ignore
 	mv $HOME/.bash_profile $STOW_DIR/backup
+fi
+if [[ -f $HOME/.bashrc ]]; then
+	printf "\n\n!!!!!! Found an existing ~/.bashrc moving to $STOW_DIR/backup"
+	mkdir -p $STOW_DIR/backup
+	echo ".*" > $STOW_DIR/backup/.stow-local-ignore
+	mv $HOME/.bashrc $STOW_DIR/backup
 fi
 stow bash
 stow git
