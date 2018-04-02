@@ -132,6 +132,7 @@ fi
 ################################################################################
 if is_osx; then
 	printf "\n\n###### installing OS X packages\n"
+	stow iterm2
 	stow karabiner
 fi
 
