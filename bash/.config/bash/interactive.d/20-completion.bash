@@ -7,13 +7,12 @@ shopt -s  extglob
 
 # bash completion
 ################################################################################
-[[ -f /usr/share/bash-completion/bash_completion ]] && \
+if [[ -f /usr/share/bash-completion/bash_completion ]]; then
 	source /usr/share/bash-completion/bash_completion
-
-# git completion
-################################################################################
-[[ -f /usr/share/git/completion/git-prompt.sh ]] && \
-	source /usr/share/bash-completion/completions/git
+elif [[ $(command -v brew) && \
+		-f $(brew --prefix)/share/bash-completion/bash_completion ]]; then
+	source $(brew --prefix)/share/bash-completion/bash_completion
+fi
 
 # Path suffixes to ignore when doing shell completion
 export FIGNORE=VS:svn

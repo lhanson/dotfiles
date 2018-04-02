@@ -81,6 +81,9 @@ merely sourcing the appropriate individual configuration units located in
 
 Confused about what loads when? [Check this out](https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/).
 
+Tab-completion depends on `bash-completion` being installed via the package manager.
+
+
 ### Vim
 
 Plugins are managed with [dein.vim](⎈https://github.com/Shougo/dein.vim).
