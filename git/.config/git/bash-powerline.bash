@@ -52,8 +52,10 @@ __powerline() {
             fi
         done < <($git_eng status --porcelain --branch 2>/dev/null)  # note the space between the two <
 
-        # print the git branch segment without a trailing newline
-        printf "「$ref$marks」"
+        # Print the git branch segment without a trailing newline
+		# Note the extra space after marks; iterm2 has trouble
+		# rendering it in the prompt if it's too close :-/
+        printf "「$ref$marks 」"
     }
 
     ps1() {
