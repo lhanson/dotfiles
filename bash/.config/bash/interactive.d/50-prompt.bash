@@ -1,13 +1,14 @@
 ################################################################################
 # prompt.bash - a dollar sign for $PS1 is pretty cool, but we can do better
 ################################################################################
-# Prompt silliness
-GREEN="\[\e[00;32m\]"
-BLUE="\[\e[01;34m\]"
-BLACK="\[\e[00;30m\]"
-WHITE="\[\e[01;37m\]"
-RED="\[\e[00;31m\]"
-bold=$(tput bold)
-normal=$(tput sgr0)
 
-export PS1="$GREEN\u@\h $WHITE\W$RED$GIT_PS1$DOCKER_PS1 $BLUE\[\e[00m\] ${bold} →${normal} "
+# Enable bash-powerline git prompt if installed
+if [ -f $XDG_CONFIG_HOME/git/bash-powerline.bash ]; then 
+	source $XDG_CONFIG_HOME/git/bash-powerline.bash
+else
+	GREEN="\[\e[00;32m\]"
+	WHITE="\[\e[01;37m\]"
+	normal=$(tput sgr0)
+	# username@host cwd →"
+	export PS1="$GREEN\u@\h $WHITE\W →${normal} "
+fi

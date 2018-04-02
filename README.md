@@ -88,6 +88,11 @@ Configuration is modularized between vim and nvim via a number of separate
 scripts on the runtimepath to configure things like mappings, plugins, and
 other settings more granularly than one gigantic `vimrc`.
 
+### git
+
+If installed on the system, shell completion is enabled as well as repository
+status in the prompt.
+
 
 ## Testing changes
 
