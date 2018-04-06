@@ -1,0 +1,31 @@
+*.foreground:   #d5d8d6
+*.background:   #1d1f21
+
+*color0: #000104
+*color1: #a96adc
+*color2: #0cff2b
+
+! grn (uname@host)
+*color3: #008800
+
+*color4: #1e231d
+*color5: #637670
+
+! git branch info
+*color6: #f488df
+
+*color7: #404d53
+*color8: #467241
+
+*color9: #525d64
+! executables
+*color10: #6abd00
+
+*color11: #3c278a
+
+! directories
+*color12: #3377ff
+
+*color13: #9c7dc3
+*color14: #767c8a
+*color15: #b6bbc0

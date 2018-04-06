@@ -1,28 +1,24 @@
-! fontconfig
-Xft.autohint:	0
-Xft.lcdfilter:	lcddefault
-Xft.hintstyle:	hintslight
-Xft.hinting:	1
-Xft.antialias:	1
-Xft.rgba:	rgb
+!##############################################################################
+! .Xresources
+!##############################################################################
+
+! colors
+!##############################################################################
+! GNU cpp does not access environment variables, so this is hardcoded for now
+! https://unix.stackexchange.com/q/347624/7430
+#include "/home/ldh/.config/Xorg/themes/current"
+
+
+! Fonts, general
+!##############################################################################
+! xterm; see $XDG_CONFIG_HOME/fontconfig/fonts.conf for specific font resolution
+*faceName: monospace:size=12
+
 
 ! URxvt
-!URxvt.font: xft:Inconsolata for Powerline:pixelsize=18,\
-!            xft:Literation Mono Powerline:pixelsize=18,\
-!            xft:DejaVu Sans Mono for Powerline:pixelsize=20,\
-!            xft:Noto Sans:pixelsize=18,\
-!            xft:LastResort:pixelsize=18,\
-!            -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*,\
-!			-misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
-! fontconfig alias, particular font is defined in ~/.config/fontconfig/fonts.conf
-URxvt.font: xft:monospace:pixelsize=18
-
+!##############################################################################
+! Generalized font declaration, defined concretely in $XDG_CONFIG_HOME/fontconfig/fonts.conf
+URxvt.font: xft:monospace:pixelsize=23
 URxvt.scrollBar: false
 URxvt.transparent: true
 URxvt.shading: 20
-! Might be needed to correct rendering of certain fonts
-URxvt.letterSpace: -1
-
-! Colors
-*.foreground:	#c5c8c6
-*.background:	#1d1f21
