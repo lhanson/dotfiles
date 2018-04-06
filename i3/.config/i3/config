@@ -1,37 +1,54 @@
+################################################################################
+# i3 config
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
+################################################################################
 
-############### Variables
-set $wallpaper /usr/share/backgrounds/saturn-storm-1920x1200.png
+# Variables
+################################################################################
+set $background $HOME/images/desktop-background
 
-############### Gaps
-# i3-gaps
-gaps inner 5
-gaps outer 0
 
+# Appearance
+################################################################################
 # Suppress window titles
 new_window 1pixel
+# i3-gaps...gaps
+gaps inner 5
+gaps outer 0
+# Scale gap size up or down
+bindsym $mod+g gaps inner current plus 5
+bindsym $mod+Shift+g gaps inner current minus 5
+# Background
+exec feh --bg-scale $background
 
-bindsym $mod+s gaps inner current plus 5
-bindsym $mod+Shift+s gaps inner current minus 5
-
-############### Font
+#################### Font
 # Window titles (and bar, unless specified in bar{} below)
-#font pango:System San Francisco Display 8
-font pango:mono 9
+# Resolved (hopefully) via fontconfig (see $XDG_CONFIG_HOME/fontconfig/fonts.conf)
+font pango:serif 8
+
+#################### Colors
+set $bg-color            #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+# window colors         border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #aaaaaa
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color  #00ff00
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color  #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 
-############### General bindings
-# Modifier is windows key
-set $mod Mod4
+# Key bindings
+################################################################################
+# Modifier is alt key
+set $mod Mod1
 # Mouse+$mod to drag floating windows
 floating_modifier $mod
-
 # start a terminal
 bindsym $mod+Return exec urxvt
-
 # kill focused window
 bindsym $mod+Shift+q kill
-
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -42,7 +59,6 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -53,13 +69,10 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-#bindsym $mod+Shift+h split h
 # split in vertical orientation
-#bindsym $mod+v split v
+bindsym $mod+v split v
 
-############### layout modes
+#################### layout modes
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
@@ -69,14 +82,14 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#TODO, needs rebinding: bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-############### workspaces
+#################### workspaces
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -133,58 +146,47 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #aaaaaa
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color  #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color  #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        colors {
-                background $bg-color
-                separator #757575
-                #                  border             background         text
-                focused_workspace  $bg-color          $bg-color          $text-color
-                inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-                urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-        }
-}
+#bar {
+#        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#        colors {
+#                background $bg-color
+#                separator #757575
+#                #                  border             background         text
+#                focused_workspace  $bg-color          $bg-color          $text-color
+#                inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#                urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#        }
+#}
 
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
 # Lock screen
-bindsym $mod+shift+x exec i3lock -i $wallpaper
+bindsym $mod+shift+x exec i3lock -i $background
 
 # Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-bindsym --release XF86AudioRaiseVolume exec pkill -SIGRTMIN+10 i3blocks
-bindsym --release XF86AudioLowerVolume exec pkill -SIGRTMIN+10 i3blocks
+#bindsym --release XF86AudioRaiseVolume exec pkill -SIGRTMIN+10 i3blocks
+#bindsym --release XF86AudioLowerVolume exec pkill -SIGRTMIN+10 i3blocks
 bindsym --release XF86AudioMute exec pkill -SIGRTMIN+10 i3blocks
 
 # Screen backlight controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-bindsym --release XF86MonBrightnessUp exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release XF86MonBrightnessDown exec pkill -SIGRTMIN+11 i3blocks
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+#bindsym --release XF86MonBrightnessUp exec pkill -SIGRTMIN+11 i3blocks
+#bindsym --release XF86MonBrightnessDown exec pkill -SIGRTMIN+11 i3blocks
 
-# Background
-exec feh --bg-scale $wallpaper
 
 # Startup programs
+################################################################################
+# Compositor, enables transparency
 exec compton
+# Terminal
 exec urxvt
-# TODO: experimental:
-exec --no-startup-id i3-msg 'workspace 2:Web; exec google-chrome-stable'
-
+# Browser
+exec google-chrome-stable
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+#exec_always --no-startup-id $XDG_CONFIG_HOME/polybar/launch.sh

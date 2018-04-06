@@ -107,9 +107,10 @@ stow readline
 # packages installed if corresponding program is detected
 ################################################################################
 printf "\n\n###### detecting conditional packages\n"
-if_installed i3 i3
 if_installed fc-match fontconfig
+if_installed i3 i3
 if_installed nvim nvim
+if_installed polybar polybar
 if_installed vim vim
 
 
