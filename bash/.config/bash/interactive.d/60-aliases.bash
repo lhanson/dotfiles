@@ -12,6 +12,7 @@ alias i='vi $XDG_CONFIG_HOME/i3/config'
 alias n='vi $XDG_CONFIG_HOME/nvim/init.vim'
 alias r='vi $DOTFILES_DIR/README.md'
 alias t='vi $DOTFILES_DIR/TODO.md'
+alias th='cd $XDG_CONFIG_HOME/Xorg/themes; ls'
 alias x='vi ~/.Xresources; xrdb -merge ~/.Xresources'
 alias vrc='vi ~/.vim/vimrc'
 

@@ -2,10 +2,8 @@
 # environment.bash - configuration setting environment variables
 ################################################################################
 
-export PATH=~/bin:$PATH
-
 # Directory where dotfiles are managed with stow
-DOTFILES_DIR=~/.dotfiles
+export DOTFILES_DIR=~/.dotfiles
 
 # XDG: see https://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
 # Explicitly set XDG locations for software which respects the variable
@@ -13,6 +11,12 @@ DOTFILES_DIR=~/.dotfiles
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
+# This isn't defined by the spec, but I think it probably should be.
+export XDG_LIB_HOME=$HOME/.local/lib
+
+export GOPATH=$XDG_LIB_HOME/go
+export PATH=$HOME/bin:$GOPATH/bin:$PATH
+
 
 # Command history
 ################################################################################
