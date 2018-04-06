@@ -1,14 +1,35 @@
-# Theming
+[ ] google hangouts app
 
-[ ] Abstract theme colors from Xresources by referencing an external
-		link to the current theme.
-		https://wiki.archlinux.org/index.php/x_resources#Load_resource_file
+[ ] lxdm theme. It's terrible, fix it.
+
+[ ] rofi theme
+
+# i3
+
+[ ] Set up polybar
+	- add brightness control
 
 
 # Setup script: short-term wins
 
 [ ] Have the setup script optionally take a remote user/hostname as an argument,
     making `seed-dotfiles.sh` redundant.
+
+
+# Theming
+
+[ ] Write automation using `schemer2` to refresh theme based on wallpaper.
+	See also: http://www.xcolors.net/
+
+[ ] See https://github.com/khamer/base16-i3 to use base16 for generating other app configs
+
+[ ] Enable Xresources to read environment variables so we can abstract out
+	things like font face and size across different programs' resources
+
+
+# Thinkpad
+
+[ ] if `acpi` is present, warn when battery is getting low
 
 
 # Setup script: larger improvements
