@@ -1,4 +1,5 @@
-*.foreground:   #d5d8d6
+*.foreground:   #ffffff
+!*.foreground:   #ffbfff
 *.background:   #1d1f21
 
 *color0: #000104
@@ -8,23 +9,27 @@
 ! grn (uname@host)
 *color3: #008800
 
-*color4: #1e231d
-*color5: #637670
+! Comments
+*color4: #a9c8a2
+
+! Section headers like [bar]
+*color5: #fd3d85
 
 ! git branch info
 *color6: #f488df
 
+! One of these shows as symlinks
 *color7: #404d53
 *color8: #467241
-
 *color9: #525d64
+
 ! executables
 *color10: #6abd00
 
 *color11: #3c278a
 
 ! directories
-*color12: #3377ff
+*color12: #2865ff
 
 *color13: #9c7dc3
 *color14: #767c8a
