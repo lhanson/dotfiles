@@ -130,6 +130,11 @@ There may be application or OS shortcuts that get in your way; disable or add
 overrides for them in `System Preferences -> Keyboard -> Shortcuts`[1](https://apple.stackexchange.com/a/286710/5394).
 
 
+### WeeChat
+
+Console-based chat client; does IRC, XMPP, Slack, etc.
+
+
 ### Window Manager
 
 `i3-gaps` is the window manager, with `rofi` as its application launcher and
