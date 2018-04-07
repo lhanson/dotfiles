@@ -48,7 +48,7 @@ font-1 = unifont:size=13;0
 font-2 = Wuncon Siji:size=13;0
 
 modules-left = i3
-modules-right = filesystem volume wlan eth battery temperature date
+modules-right =  volume battery wlan eth temperature date
 
 tray-position = right
 tray-padding = 0
@@ -261,8 +261,7 @@ label-connected = %local_ip%
 ;format-disconnected =
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-label-disconnected = no eth
+;label-disconnected = no eth
 label-disconnected-foreground = ${colors.foreground-alt}
 
 
