@@ -100,7 +100,6 @@ Confused about what loads when? [Check this out](https://shreevatsa.wordpress.co
 
 Tab-completion depends on `bash-completion` being installed via the package manager.
 
-
 ### Vim
 
 Configuration is modularized between vim and nvim via a number of separate
@@ -117,6 +116,18 @@ the new plugin and it should be installed the next time (n)vim is run.
 
 If installed on the system, shell completion is enabled as well as repository
 status in the prompt.
+
+### chunkwm / skhd (OS X)
+
+The homebrew packages `chunkwm` (tiling window manager) and `skhd`
+(hotkey daemon) work in tandem, however their homebrew formulae need a little
+convincing in order to load configs from our tidy dotfile directories.
+Edit `$(brew --prefix)/Cellar/skhd/<version>/homebrew.mxcl.skhd.plist` and
+`$(brew --prefix)/Cellar/chunkwm/<version>/homebrew.mxcl.chunkwm.plist` and
+add the `--config` option to the invocations.
+
+There may be application or OS shortcuts that get in your way; disable or add
+overrides for them in `System Preferences -> Keyboard -> Shortcuts`[1](https://apple.stackexchange.com/a/286710/5394).
 
 
 ### Window Manager
