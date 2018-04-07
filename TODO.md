@@ -1,22 +1,27 @@
+# Productivity 
+
+[ ] messaging app
+
 [ ] google hangouts app
+
+
+# Polybar
+
+[ ] unicode symbols don't seem to scale at all; too tiny
+
+[ ] volume control doesn't track the mixer settings
+
+[ ] add brightness control
+
+[ ] unicode; various icons don't display without a weird combination of fonts
+	being present
+
+
+# Theming
 
 [ ] lxdm theme. It's terrible, fix it.
 
 [ ] rofi theme
-
-# i3
-
-[ ] Set up polybar
-	- add brightness control
-
-
-# Setup script: short-term wins
-
-[ ] Have the setup script optionally take a remote user/hostname as an argument,
-    making `seed-dotfiles.sh` redundant.
-
-
-# Theming
 
 [ ] Write automation using `schemer2` to refresh theme based on wallpaper.
 	See also: http://www.xcolors.net/
@@ -25,6 +30,17 @@
 
 [ ] Enable Xresources to read environment variables so we can abstract out
 	things like font face and size across different programs' resources
+
+
+# Bugs
+
+[ ] urxvt delays, rendering hiccups
+
+
+# Setup script: short-term wins
+
+[ ] Have the setup script optionally take a remote user/hostname as an argument,
+    making `seed-dotfiles.sh` redundant.
 
 
 # Thinkpad

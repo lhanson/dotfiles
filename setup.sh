@@ -114,6 +114,7 @@ if_installed nvim nvim
 if_installed polybar polybar
 if_installed skhd skhd
 if_installed vim vim
+if_installed weechat weechat
 
 
 ################################################################################
