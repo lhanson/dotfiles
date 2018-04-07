@@ -4,3 +4,5 @@ backup
 stow
 # Too big at the moment, not sure if I want to haul them around
 wallpapers
+# Ignore symlink kludge to let weechat find the CA certs on OS X and Linux
+weechat/.config/weechat/ca-certs

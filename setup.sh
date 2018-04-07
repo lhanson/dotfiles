@@ -114,7 +114,15 @@ if_installed nvim nvim
 if_installed polybar polybar
 if_installed skhd skhd
 if_installed vim vim
-if_installed weechat weechat
+if is_installed weechat; then
+	# Location of CA certs varies between OS X/Homebrew and Arch
+	# https://weechat.org/files/doc/devel/weechat_faq.en.html#irc_ssl_freenode
+	if is_osx; then
+		ln -sf /usr/local/etc/openssl/cert.pem $XDG_CONFIG_HOME/weechat/ca-certs
+	else
+		ln -sf /etc/ssl/certs/ca-certificates.crt $XDG_CONFIG_HOME/weechat/ca-certs
+	fi
+fi
 
 
 ################################################################################
