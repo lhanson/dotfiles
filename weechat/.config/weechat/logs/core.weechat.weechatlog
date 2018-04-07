@@ -1,0 +1,137 @@
+2018-04-06 19:16:42		New key binding (context "default"): meta-meta-OQ => /bar scroll buflist * e
+2018-04-06 19:16:42		New key binding (context "default"): meta-meta-OP => /bar scroll buflist * b
+2018-04-06 19:16:42		New key binding (context "default"): meta-OQ => /bar scroll buflist * +100%
+2018-04-06 19:16:42		New key binding (context "default"): meta-OP => /bar scroll buflist * -100%
+2018-04-06 19:16:42		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, script, trigger, xfer
+2018-04-06 19:17:40		fifo: pipe closed
+2018-04-06 19:18:58		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, script, trigger, xfer
+2018-04-06 19:21:48		[core]
+2018-04-06 19:21:48		  away     eval     mouse    repeat   version
+2018-04-06 19:21:48		  bar      filter   mute     save     wait   
+2018-04-06 19:21:48		  buffer   help     plugin   secure   window 
+2018-04-06 19:21:48		  color    history  print    set    
+2018-04-06 19:21:48		  command  input    proxy    unset  
+2018-04-06 19:21:48		  cursor   key      quit     upgrade
+2018-04-06 19:21:48		  debug    layout   reload   uptime 
+2018-04-06 19:21:48		[logger]
+2018-04-06 19:21:48		  logger
+2018-04-06 19:21:48		[fset]
+2018-04-06 19:21:48		  fset
+2018-04-06 19:21:48		[fifo]
+2018-04-06 19:21:48		  fifo
+2018-04-06 19:21:48		[charset]
+2018-04-06 19:21:48		  charset
+2018-04-06 19:21:48		[trigger]
+2018-04-06 19:21:48		  trigger
+2018-04-06 19:21:48		[relay]
+2018-04-06 19:21:48		  relay
+2018-04-06 19:21:48		[alias]
+2018-04-06 19:21:48		  AAWAY    C        K        Q        V      
+2018-04-06 19:21:48		  alias    CHAT     KB       REDRAW   W      
+2018-04-06 19:21:48		  AME      CL       LEAVE    SAY      WC     
+2018-04-06 19:21:48		  AMSG     CLOSE    M        SIGNOFF  WI     
+2018-04-06 19:21:48		  ANICK    EXIT     MSGBUF   T        WII    
+2018-04-06 19:21:48		  BEEP     IG       MUB      UB       WW     
+2018-04-06 19:21:48		  BYE      J        N        UMODE  
+2018-04-06 19:21:48		[exec]
+2018-04-06 19:21:48		  exec
+2018-04-06 19:21:48		[xfer]
+2018-04-06 19:21:48		  me  xfer
+2018-04-06 19:21:48		[buflist]
+2018-04-06 19:21:48		  buflist
+2018-04-06 19:21:48		[irc]
+2018-04-06 19:21:48		  admin       ison        part        squit     
+2018-04-06 19:21:48		  allchan     join        ping        stats     
+2018-04-06 19:21:48		  allpv       kick        pong        summon    
+2018-04-06 19:21:48		  allserv     kickban     query       time      
+2018-04-06 19:21:48		  ban         kill        quiet       topic     
+2018-04-06 19:21:48		  cap         links       quote       trace     
+2018-04-06 19:21:48		  connect     list        reconnect   unban     
+2018-04-06 19:21:48		  ctcp        lusers      rehash      unquiet   
+2018-04-06 19:21:48		  cycle       map         remove      userhost  
+2018-04-06 19:21:48		  dcc         me          restart     users     
+2018-04-06 19:21:48		  dehalfop    mode        sajoin      version   
+2018-04-06 19:21:48		  deop        motd        samode      voice     
+2018-04-06 19:21:48		  devoice     msg         sanick      wallchops 
+2018-04-06 19:21:48		  die         names       sapart      wallops   
+2018-04-06 19:21:48		  disconnect  nick        saquit      who       
+2018-04-06 19:21:48		  halfop      notice      server      whois     
+2018-04-06 19:21:48		  ignore      notify      service     whowas    
+2018-04-06 19:21:48		  info        op          servlist  
+2018-04-06 19:21:48		  invite      oper        squery    
+2018-04-06 19:21:48		[perl]
+2018-04-06 19:21:48		  perl
+2018-04-06 19:21:48		[script]
+2018-04-06 19:21:48		  script
+2018-04-06 19:21:48		[python]
+2018-04-06 19:21:48		  python
+2018-04-06 19:22:40		fifo: pipe closed
+2018-04-06 19:23:09		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, script, trigger, xfer
+2018-04-06 19:24:05		Option changed: weechat.plugin.autoload = "*,!tcl"  (default: "*")
+2018-04-06 19:24:07		fifo: pipe closed
+2018-04-06 19:24:09		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, script, trigger, xfer
+2018-04-06 19:24:54		fifo: pipe closed
+2018-04-06 19:25:29		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, script, trigger, xfer
+2018-04-06 19:25:39		fifo: pipe closed
+2018-04-06 19:25:40		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, script, trigger, xfer
+2018-04-06 19:25:54		fifo: pipe closed
+2018-04-06 19:26:00		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, script, trigger, xfer
+2018-04-06 19:26:06		fifo: pipe closed
+2018-04-06 19:26:16		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, script, trigger, xfer
+2018-04-06 19:26:19		fifo: pipe closed
+2018-04-06 19:26:34		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, script, trigger, xfer
+2018-04-06 19:33:03	=!=	You can not write text in this buffer
+2018-04-06 19:33:05		fifo: pipe closed
+2018-04-06 19:35:29		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, script, trigger, xfer
+2018-04-06 19:35:31	=!=	Error: unknown command "/plugins" (type /help for help)
+2018-04-06 19:35:43		Plugins loaded:
+2018-04-06 19:35:43		  logger: Log buffers to files
+2018-04-06 19:35:43		  fset: Fast set of WeeChat and plugins options
+2018-04-06 19:35:43		  fifo: FIFO pipe for remote control
+2018-04-06 19:35:43		  charset: Charset conversions
+2018-04-06 19:35:43		  trigger: Text replacement and command execution on events triggered by WeeChat/plugins
+2018-04-06 19:35:43		  relay: Relay WeeChat data to remote application (irc/weechat protocols)
+2018-04-06 19:35:43		  alias: Alias commands
+2018-04-06 19:35:43		  exec: Execution of external commands in WeeChat
+2018-04-06 19:35:43		  xfer: DCC file transfer and direct chat
+2018-04-06 19:35:43		  buflist: Buffers list
+2018-04-06 19:35:43		  irc: IRC (Internet Relay Chat) protocol
+2018-04-06 19:35:43		  perl: Support of perl scripts
+2018-04-06 19:35:43		  script: Script manager
+2018-04-06 19:35:43		  python: Support of python scripts
+2018-04-06 19:36:22		[irc]  /server  list|listfull [<server>]
+2018-04-06 19:36:22		                add <server> <hostname>[/<port>] [-temp] [-<option>[=<value>]] [-no<option>]
+2018-04-06 19:36:22		                copy|rename <server> <new_name>
+2018-04-06 19:36:22		                reorder <server> [<server>...]
+2018-04-06 19:36:22		                open <server>|-all [<server>...]
+2018-04-06 19:36:22		                del|keep <server>
+2018-04-06 19:36:22		                deloutq|jump|raw
+2018-04-06 19:36:22		list, add or remove IRC servers
+2018-04-06 19:36:22		    list: list servers (without argument, this list is displayed)
+2018-04-06 19:36:22		listfull: list servers with detailed info for each server
+2018-04-06 19:36:22		     add: add a new server
+2018-04-06 19:36:22		  server: server name, for internal and display use
+2018-04-06 19:36:22		hostname: name or IP address of server, with optional port (default: 6667), many addresses can be separated by a comma
+2018-04-06 19:36:22		   -temp: add a temporary server (not saved)
+2018-04-06 19:36:22		  option: set option for server (for boolean option, value can be omitted)
+2018-04-06 19:36:22		nooption: set boolean option to 'off' (for example: -nossl)
+2018-04-06 19:36:22		    copy: duplicate a server
+2018-04-06 19:36:22		  rename: rename a server
+2018-04-06 19:36:22		 reorder: reorder list of servers
+2018-04-06 19:36:22		    open: open the server buffer without connecting
+2018-04-06 19:36:22		    keep: keep server in config file (for temporary servers only)
+2018-04-06 19:36:22		     del: delete a server
+2018-04-06 19:36:22		 deloutq: delete messages out queue for all servers (all messages WeeChat is currently sending)
+2018-04-06 19:36:22		    jump: jump to server buffer
+2018-04-06 19:36:22		     raw: open buffer with raw IRC data
+2018-04-06 19:36:22		Examples:
+2018-04-06 19:36:22		  /server listfull
+2018-04-06 19:36:22		  /server add freenode chat.freenode.net
+2018-04-06 19:36:22		  /server add freenode chat.freenode.net/6697 -ssl -autoconnect
+2018-04-06 19:36:22		  /server add chatspike irc.chatspike.net/6667,irc.duckspike.net/6667
+2018-04-06 19:36:22		  /server copy freenode freenode-test
+2018-04-06 19:36:22		  /server rename freenode-test freenode2
+2018-04-06 19:36:22		  /server reorder freenode2 freenode
+2018-04-06 19:36:22		  /server del freenode
+2018-04-06 19:36:22		  /server deloutq
+2018-04-06 19:38:11		fifo: pipe closed
