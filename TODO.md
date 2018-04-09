@@ -1,6 +1,8 @@
 # Productivity 
 
-[ ] messaging app
+[ ] Configure weechat;
+
+[ ] set up ranger for file management
 
 [ ] google hangouts app
 
@@ -15,6 +17,8 @@
 
 [ ] unicode; various icons don't display without a weird combination of fonts
 	being present
+
+[ ] Investigate plugins: https://github.com/x70b1/polybar-scripts
 
 
 # Theming
