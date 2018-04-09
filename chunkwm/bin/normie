@@ -2,3 +2,4 @@
 
 # Stop chunkwm to go back to a normal OS X experience
 brew services stop chunkwm
+brew services stop skhd

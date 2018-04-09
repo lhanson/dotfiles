@@ -1,4 +1,5 @@
 #!/bin/sh
 
 # Fire up chunkwm again
+brew services restart skhd
 brew services restart chunkwm
