@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Stop chunkwm to go back to a normal OS X experience
+brew services stop chunkwm
