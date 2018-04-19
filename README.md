@@ -70,6 +70,10 @@ an application's shoes and see what fontconfig is telling it.
 Using `gucharmap` can also help you visualize which fonts supply a given glyph
 you're looking for.
 
+Console fonts for use in the virtual console can be previewed by giving
+`setfont` the name of a font in `/usr/share/kbd/consolefonts`, and permanently
+configured by setting e.g. `FONT=ter-powerline-v28n` in `/etc/vconsole.conf`.
+
 
 ## Audio
 

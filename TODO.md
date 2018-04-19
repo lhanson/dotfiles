@@ -1,8 +1,6 @@
 
 # Productivity 
 
-[ ] Console font
-
 [ ] Configure weechat;
 
 [ ] Ranger for file management
