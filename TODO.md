@@ -1,24 +1,23 @@
+
 # Productivity 
+
+[ ] Console font
 
 [ ] Configure weechat;
 
-[ ] set up ranger for file management
+[ ] Ranger for file management
 
-[ ] google hangouts app
+[ ] Google hangouts app
 
 
 # Polybar
 
-[ ] unicode symbols don't seem to scale at all; too tiny
-
-[ ] volume control doesn't track the mixer settings
-
-[ ] add brightness control
-
-[ ] unicode; various icons don't display without a weird combination of fonts
-	being present
+[ ] Power module ramp font
+	Try nerd-fonts-complete for better icon coverage
 
 [ ] Investigate plugins: https://github.com/x70b1/polybar-scripts
+
+[ ] Nice to have: browser scroll with the thinkpad pointing stick
 
 
 # Theming
@@ -31,9 +30,6 @@
 	See also: http://www.xcolors.net/
 
 [ ] See https://github.com/khamer/base16-i3 to use base16 for generating other app configs
-
-[ ] Enable Xresources to read environment variables so we can abstract out
-	things like font face and size across different programs' resources
 
 
 # Bugs

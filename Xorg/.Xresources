@@ -18,7 +18,7 @@
 ! URxvt
 !##############################################################################
 ! Generalized font declaration, defined concretely in $XDG_CONFIG_HOME/fontconfig/fonts.conf
-URxvt.font: xft:monospace:pixelsize=23
+URxvt.font: xft:monospace:size=10
 URxvt.scrollBar: false
 URxvt.transparent: true
 URxvt.shading: 20
