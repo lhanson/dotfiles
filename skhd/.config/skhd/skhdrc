@@ -51,6 +51,10 @@ shift + alt - 2 : chunkc tiling::window --send-to-desktop 2
 # kill focused window
 shift + alt - q : chunkc tiling::window --close
 
+# move focused container to monitor
+cmd + shift - h  : chunkc tiling::monitor --send-to-monitor prev
+cmd + shift - l  : chunkc tiling::monitor --send-to-monitor next
+
 # focus monitor
 cmd + ctrl - h  : chunkc tiling::monitor -f prev
 cmd + ctrl - l  : chunkc tiling::monitor -f next
