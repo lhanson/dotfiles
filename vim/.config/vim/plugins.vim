@@ -19,6 +19,7 @@ if dein#load_state(s:dein_cache)
   " Intelligently reopen files at your last edit position
   call dein#add('farmergreg/vim-lastplace')
   call dein#add('gko/vim-coloresque')
+  call dein#add('powerline/powerline')
 
   "To uninstall commented-out/unused plugins:
   "call map(dein#check_clean(), "delete(v:val, 'rf')")
@@ -28,8 +29,7 @@ if dein#load_state(s:dein_cache)
   call dein#save_state()
 endif
 
-" install new plugins on startup
+" Install new plugins on startup
 if dein#check_install()
   call dein#install()
 endif
-  

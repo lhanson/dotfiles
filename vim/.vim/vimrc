@@ -8,3 +8,8 @@ source ~/.config/vim/plugins.vim
 source ~/.config/vim/settings.vim
 " Text formatting
 source ~/.config/vim/text-format.vim
+
+" Load application-specific configs
+for fpath in split(globpath('$XDG_CONFIG_HOME/vim/vimrc.d/', '*.vim'), '\n')
+	exe 'source' fpath
+endfor
