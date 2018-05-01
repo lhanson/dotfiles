@@ -98,6 +98,7 @@ other general theme-related configuration:
 	* gtk+3 configuration is done in $XDG_CONFIG_HOME/gtk-3.0
 	* ~/images/desktop-background is a symlink to the desired desktop
 		background, loaded in the i3 config
+	* powerline configs live in ~/.config/powerline
 
 ### Generating a theme
 

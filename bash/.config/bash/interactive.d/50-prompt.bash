@@ -2,10 +2,9 @@
 # prompt.bash - a dollar sign for $PS1 is pretty cool, but we can do better
 ################################################################################
 
-# Enable bash-powerline git prompt if installed
-if [ -f $XDG_CONFIG_HOME/git/bash-powerline.bash ]; then 
-	source $XDG_CONFIG_HOME/git/bash-powerline.bash
-else
+# If we're not using powerline for our prompt, set something basic
+command -v powerline >/dev/null 2>&1
+if [[ $? -ne 0 ]]; then
 	GREEN="\[\e[00;32m\]"
 	WHITE="\[\e[01;37m\]"
 	normal=$(tput sgr0)
