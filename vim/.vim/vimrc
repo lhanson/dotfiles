@@ -2,12 +2,17 @@
 " vimrc - Main entry point to other configs
 "###############################################################################
 
+if !has("nvim")
+	" Teach vim to respect the XDG standard
+	source ~/.config/vim/xdg.vim
+endif
+
 " Plugin management
-source ~/.config/vim/plugins.vim
+source $XDG_CONFIG_HOME/vim/plugins.vim
 " Basic settings
-source ~/.config/vim/settings.vim
+source $XDG_CONFIG_HOME/vim/settings.vim
 " Text formatting
-source ~/.config/vim/text-format.vim
+source $XDG_CONFIG_HOME/vim/text-format.vim
 
 " Load application-specific configs
 for fpath in split(globpath('$XDG_CONFIG_HOME/vim/vimrc.d/', '*.vim'), '\n')
