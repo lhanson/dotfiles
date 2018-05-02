@@ -17,13 +17,25 @@ unreadable monolith.
 * a POSIX shell (to run the setup script itself)
 * either GNU `stow`, or:
 	`make`, `curl`, `perl5` (setup script needs them to install `stow`)
+* git
 
 
 ## Installing
 
-Log into your fresh new shell environment and run this guy:
+Clone the repo into your $HOME:
 
-    git clone https://github.com/lhanson/dotfiles.git .dotfiles && .dotfiles/setup.sh
+    git clone https://github.com/lhanson/dotfiles.git $HOME/.dotfiles
+
+*Optional*: if this is a fresh new Arch installation and you want to install
+everything needed to be up and running with a productive environment, run:
+
+    $HOME/.dotfiles/arch-setup/arch-install.sh
+
+Setting up dotfiles:
+
+    $HOME/.dotfiles/setup.sh
+
+This will only install dotfiles for software which the script detects is present.
 
 ### Installing on a remote host
 
