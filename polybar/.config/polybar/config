@@ -58,6 +58,10 @@ label-mounted =  %percentage_used%%
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
+ws-icon-0 = 1; 
+ws-icon-1 = 2; 
+ws-icon-default = 
+
 index-sort = true
 wrapping-scroll = false
 
@@ -66,13 +70,13 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %icon%
 label-focused-background = ${xrdb:color0}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
