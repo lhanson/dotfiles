@@ -9,8 +9,8 @@ width = 100%
 height = 25
 
 ; font-N = <fontconfig pattern>;<vertical offset>
-font-0 = Sans Serif:size=12;4
-font-1 = Material Icons::size=18;8
+font-0 = Inconsolata Nerd Font:size=15;4
+font-1 = Sans Serif:size=12;4
 
 modules-left = i3 xwindow
 modules-right = battery volume xbacklight wlan filesystem temperature date
@@ -52,7 +52,7 @@ label = %title:0:30:...%
 type = internal/fs
 interval = 25
 mount-0 = /
-label-mounted = %percentage_used%%
+label-mounted =  %percentage_used%%
 
 
 [module/i3]
@@ -97,20 +97,20 @@ label-empty-padding = 2
 [module/mpd]
 type = internal/mpd
 format-online = <label-song> <label-time>
-#<icon-prev> <toggle> <icon-next>
-#<toggle>
+;<icon-prev> <toggle> <icon-next>
+;<toggle>
 
 icon-prev = 
 icon-stop = 
 icon-play = 
 icon-pause = 
 icon-next = 
-#icon-prev = <-
-#icon-stop = X
-#icon-play-prefix = #f00
-#icon-play = (Paused)
-#icon-pause =
-#icon-next = ->
+;icon-prev = <-
+;icon-stop = X
+;icon-play-prefix = #f00
+;icon-play = (Paused)
+;icon-pause =
+;icon-next = ->
 
 ;bar-progress-width = 45
 ;bar-progress-indicator = |
@@ -126,17 +126,14 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = 
+label = 
 
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #ff
-bar-indicator-font = 2
 bar-fill = ─
-bar-fill-font = 2
 bar-fill-foreground = #9f78e1
 bar-empty = ─
-bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
 
@@ -170,19 +167,12 @@ interface = wlp4s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline =
-label-connected =  %essid%
+label-connected =  %essid%
 
 format-disconnected = <label-disconnected>
-format-disconnected-underline =
 label-disconnected = no wifi
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-0 =
 
 
 [module/eth]
@@ -195,17 +185,13 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
-;format-disconnected =
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = no eth
-label-disconnected-foreground = ${colors.foreground-alt}
 
 
 [module/date]
 type = internal/date
 interval = 5
-format-prefix = 
+format-prefix = 
 date = " %a, %b %d"
 time = " %I:%M %p"
 label = %date% %time%
@@ -223,10 +209,10 @@ master-soundcard = hw:1
 
 
 format-volume = <label-volume> <bar-volume>
-label-volume = 
+label-volume = 
 label-volume-foreground = ${root.foreground}
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = 
+label-muted = 
 
 bar-volume-width = 10
 ;bar-volume-foreground-0 = ${xrdb:color10}
@@ -236,7 +222,7 @@ bar-volume-width = 10
 ;bar-volume-foreground-4 = ${xrdb:color10}
 ;bar-volume-foreground-5 = ${xrdb:color11}
 ;bar-volume-foreground-6 = ${xrdb:color1}
-;bar-volume-gradient = true 
+bar-volume-gradient = true 
 bar-volume-indicator = |
 ;bar-volume-indicator-font = 1
 bar-volume-fill = =
@@ -254,17 +240,20 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 
-format-full-prefix = ""
+format-full-prefix = "f"
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
+;animation-charging-0 = ac0
+animation-charging-0 = 
+;animation-charging-1 = 
+;animation-charging-2 = 
+;animation-charging-foreground = ${colors.foreground-alt}
+;animation-charging-framerate = 750
 
 
 [module/temperature]
@@ -280,9 +269,11 @@ format-warn-underline = ${self.format-underline}
 label = %temperature%
 label-warn = %temperature%
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-4 = 
+ramp-3 = 
+ramp-2 = 
+ramp-1 = 
+ramp-0 = 
 
 
 [module/powermenu]

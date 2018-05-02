@@ -1,4 +1,3 @@
-
 # Productivity 
 
 [ ] Configure weechat;
@@ -10,12 +9,7 @@
 
 # Polybar
 
-[ ] Power module ramp font
-	Try nerd-fonts-complete for better icon coverage
-
 [ ] Investigate plugins: https://github.com/x70b1/polybar-scripts
-
-[ ] Nice to have: browser scroll with the thinkpad pointing stick
 
 
 # Theming
@@ -44,6 +38,8 @@
 # Thinkpad
 
 [ ] if `acpi` is present, warn when battery is getting low
+
+[ ] Nice to have: browser scroll with the thinkpad pointing stick
 
 
 # Setup script: larger improvements

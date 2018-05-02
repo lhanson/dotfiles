@@ -1,5 +1,6 @@
 ################################################################################
-# i3 config
+# i3 config file (v4)
+# Note that the above line is required verbatim :/
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 ################################################################################
 
@@ -188,5 +189,5 @@ exec compton
 exec urxvt
 # Browser
 exec google-chrome-stable
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-#exec_always --no-startup-id $XDG_CONFIG_HOME/polybar/launch.sh
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
