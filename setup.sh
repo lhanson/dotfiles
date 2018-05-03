@@ -116,6 +116,7 @@ if_installed powerline powerline
 if_installed rofi rofi
 if_installed skhd skhd
 if_installed vim vim
+if_installed wal wal
 if is_installed weechat; then
 	# Location of CA certs varies between OS X/Homebrew and Arch
 	# https://weechat.org/files/doc/devel/weechat_faq.en.html#irc_ssl_freenode

@@ -19,6 +19,7 @@ if dein#load_state(s:dein_cache)
   " Intelligently reopen files at your last edit position
   call dein#add('farmergreg/vim-lastplace')
   call dein#add('gko/vim-coloresque')
+  call dein#add('dylanaraps/wal.vim')
   if has('nvim')
     " nvim doesn't support powerline yet: https://github.com/powerline/powerline/issues/1287
     call dein#add('vim-airline/vim-airline')
