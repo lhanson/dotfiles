@@ -12,13 +12,14 @@ height = 25
 font-0 = sans-serif:size=15;4
 font-1 = Inconsolata Nerd Font:size=15;4
 
-modules-left = i3 xwindow
-modules-right = battery volume xbacklight wlan filesystem temperature date
+modules-left = i3
+modules-center = xwindow
+modules-right = battery volume wlan temperature date
 
-fixed-center = false
-background = ${colors.background}
+fixed-center = true
+background = ${colors.mostly-transparent}
 foreground = ${colors.foreground}
-line-size = 3
+line-size = 1
 line-color = {$xrdb:color1}
 border-size = 0
 border-color = #00000000
@@ -40,6 +41,7 @@ foreground-alt = ${xrdb:color7}
 primary = ${xrdb:color3}
 secondary = ${xrdb:color5}
 alert = #bd2c40
+mostly-transparent = #77000000
 
 
 [module/xwindow]
@@ -171,7 +173,8 @@ interface = wlp4s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-label-connected =  %essid%
+label-connected = 
+;label-connected =  %essid%
 
 format-disconnected = <label-disconnected>
 label-disconnected = no wifi
@@ -239,7 +242,7 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = <ramp-capacity>
 
 format-full-prefix = "f"
 
@@ -249,12 +252,7 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 
-;animation-charging-0 = ac0
 animation-charging-0 = 
-;animation-charging-1 = 
-;animation-charging-2 = 
-;animation-charging-foreground = ${colors.foreground-alt}
-;animation-charging-framerate = 750
 
 
 [module/temperature]
@@ -262,7 +260,8 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
+format = <ramp>
+;format = <ramp> <label>
 format-underline =
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
