@@ -9,8 +9,8 @@ width = 100%
 height = 25
 
 ; font-N = <fontconfig pattern>;<vertical offset>
-font-0 = Inconsolata Nerd Font:size=15;4
-font-1 = Sans Serif:size=12;4
+font-0 = sans-serif:size=15;4
+font-1 = Inconsolata Nerd Font:size=15;4
 
 modules-left = i3 xwindow
 modules-right = battery volume xbacklight wlan filesystem temperature date
@@ -33,14 +33,13 @@ scroll-down = i3wm-wsprev
 
 
 [colors]
-background = aa${xrdb:color1}
-background-alt = #444
+background = ${xrdb:background}
+background-alt = ${xrdb:color3}
 foreground = ${xrdb:foreground}
-foreground-alt = #555
+foreground-alt = ${xrdb:color7}
 primary = ${xrdb:color3}
 secondary = ${xrdb:color5}
 alert = #bd2c40
-col = #00f
 
 
 [module/xwindow]
@@ -58,6 +57,7 @@ label-mounted =  %percentage_used%%
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
+ws-icon-font = 1
 ws-icon-0 = 1; 
 ws-icon-1 = 2; 
 ws-icon-default = 
@@ -66,13 +66,13 @@ index-sort = true
 wrapping-scroll = false
 
 label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-foreground = #fbd
+label-mode-background = ${colors.background}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-background = ${xrdb:color0}
-label-focused-underline= ${colors.primary}
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.background-alt}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -228,11 +228,8 @@ bar-volume-width = 10
 ;bar-volume-foreground-6 = ${xrdb:color1}
 bar-volume-gradient = true 
 bar-volume-indicator = |
-;bar-volume-indicator-font = 1
 bar-volume-fill = =
-;bar-volume-fill-font = 2
 bar-volume-empty = =
-;bar-volume-empty-font = 2
 
 
 [module/battery]

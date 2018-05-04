@@ -1,7 +1,4 @@
-# WIP: wal config
-
-[-] Have powerline bash colors use wal-generated theme
-	- run powerline-daemon --replace
+[ ] Polybar use wal colors
 
 # Bugs
 
