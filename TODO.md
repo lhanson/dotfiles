@@ -1,13 +1,17 @@
+# WIP: wal config
+
+[ ] Why doesn't URXVT display the damn Git characters...
+
+[-] Have powerline bash colors use wal-generated theme
+	- run powerline-daemon --replace
+	- is vim powerline updating?
+
+
 # Use stow for managing system-wide files in addition to user-specific dotfiles.
 
 [ ] Maintain /etc/lxdm/lxdm.conf to make i3 the default
 
 [ ] Set lxdm theme
-
-
-# Near Future
-
-[ ] Have powerline bash colors use wal-generated theme
 
 
 # Productivity 

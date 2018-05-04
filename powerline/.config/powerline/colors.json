@@ -62,10 +62,6 @@
 		"skyblue1": 117,
 		"khaki1": 228,
 
-		"wal:walcolor0": 0,
-		"wal:walcolor1": 1,
-		"wal:walcolor7": 7,
-
 		"solarized:base03": [8, "002b36"],
 		"solarized:base02": [0, "073642"],
 		"solarized:base01": [10, "586e75"],
