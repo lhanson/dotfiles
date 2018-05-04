@@ -5,6 +5,8 @@ set -e	# exit immediatly on failure
 
 # Path to this script, will be used as the stow directory
 STOW_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# Specify a default config dir if it isn't already set
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 
 # Tests whether a specified command ($1) is available
@@ -120,6 +122,7 @@ if_installed wal wal
 if is_installed weechat; then
 	# Location of CA certs varies between OS X/Homebrew and Arch
 	# https://weechat.org/files/doc/devel/weechat_faq.en.html#irc_ssl_freenode
+	mkdir -p $XDG_CONFIG_HOME/weechat
 	if is_osx; then
 		ln -sf /usr/local/etc/openssl/cert.pem $XDG_CONFIG_HOME/weechat/ca-certs
 	else
