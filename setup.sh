@@ -129,6 +129,7 @@ if is_installed weechat; then
 		ln -sf /etc/ssl/certs/ca-certificates.crt $XDG_CONFIG_HOME/weechat/ca-certs
 	fi
 fi
+if_installed xterm xterm
 
 
 ################################################################################

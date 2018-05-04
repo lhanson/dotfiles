@@ -7,6 +7,7 @@
 # Variables
 ################################################################################
 set $background $HOME/images/desktop-background
+set $terminal xterm
 
 
 # Appearance
@@ -47,7 +48,7 @@ set $mod Mod1
 # Mouse+$mod to drag floating windows
 floating_modifier $mod
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec $terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 # change focus
@@ -168,7 +169,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 # Compositor, enables transparency
 exec compton
 # Terminal
-exec urxvt
+exec $terminal
 
 # Browser
 exec google-chrome-stable
