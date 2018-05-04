@@ -1,3 +1,15 @@
+# Use stow for managing system-wide files in addition to user-specific dotfiles.
+
+[ ] Maintain /etc/lxdm/lxdm.conf to make i3 the default
+
+[ ] Set lxdm theme
+
+
+# Near Future
+
+[ ] Have powerline bash colors use wal-generated theme
+
+
 # Productivity 
 
 [ ] Configure weechat;
@@ -17,9 +29,6 @@
 [ ] lxdm theme. It's terrible, fix it.
 
 [ ] rofi theme
-
-[ ] Write automation using `schemer2` to refresh theme based on wallpaper.
-	See also: http://www.xcolors.net/
 
 [ ] See https://github.com/khamer/base16-i3 to use base16 for generating other app configs
 
