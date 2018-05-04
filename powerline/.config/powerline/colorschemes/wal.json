@@ -1,8 +1,8 @@
 {
 	"name": "Custom",
 	"groups": {
-		"information:additional":     { "fg": "gray9", "bg": "gray4", "attrs": [] },
-		"information:regular":        { "fg": "gray10", "bg": "gray4", "attrs": ["bold"] },
+		"information:additional":     { "fg": "wal:walcolor7", "bg": "gray4", "attrs": [] },
+		"information:regular":        { "fg": "wal:walcolor0", "bg": "gray4", "attrs": ["bold"] },
 		"information:highlighted":    { "fg": "white", "bg": "gray4", "attrs": [] },
 		"information:priority":       { "fg": "brightyellow", "bg": "mediumorange", "attrs": [] },
 		"warning:regular":            { "fg": "white", "bg": "brightred", "attrs": ["bold"] },
@@ -40,8 +40,8 @@
 		"battery_full":               { "fg": "red", "bg": "gray0", "attrs": [] },
 		"battery_empty":              { "fg": "white", "bg": "gray0", "attrs": [] },
 		"player":                     { "fg": "gray10", "bg": "black", "attrs": [] },
-		"user":                       { "fg": "white", "bg": "darkblue", "attrs": ["bold"] },
-		"branch":                     { "fg": "gray9", "bg": "gray2", "attrs": [] },
+		"user":                       { "fg": "wal:walcolor0", "bg": "darkblue", "attrs": ["bold"] },
+		"branch":                     { "fg": "wal:walcolor7", "bg": "gray2", "attrs": [] },
 		"branch_dirty":               { "fg": "brightyellow", "bg": "gray2", "attrs": [] },
 		"branch_clean":               { "fg": "gray9", "bg": "gray2", "attrs": [] },
 		"branch:divider":             { "fg": "gray7", "bg": "gray2", "attrs": [] },

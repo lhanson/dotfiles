@@ -4,7 +4,7 @@
 	},
 	"ext": {
 		"shell": {
-			"colorscheme": "default",
+			"colorscheme": "wal",
 			"theme": "default",
 			"local_themes": {
 				"continuation": "continuation",
