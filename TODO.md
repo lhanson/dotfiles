@@ -1,10 +1,12 @@
 # WIP: wal config
 
-[ ] Why doesn't URXVT display the damn Git characters...
-
 [-] Have powerline bash colors use wal-generated theme
 	- run powerline-daemon --replace
-	- is vim powerline updating?
+
+# Bugs
+
+[ ] Switching to xterm didn't solve the issue of (n)vim sporadically not
+	rendering blocks of text when scrolling/loading
 
 
 # Use stow for managing system-wide files in addition to user-specific dotfiles.
@@ -35,11 +37,6 @@
 [ ] rofi theme
 
 [ ] See https://github.com/khamer/base16-i3 to use base16 for generating other app configs
-
-
-# Bugs
-
-[ ] urxvt delays, rendering hiccups
 
 
 # Setup script: short-term wins
