@@ -110,6 +110,7 @@ stow readline
 ################################################################################
 printf "\n\n###### detecting conditional packages\n"
 if_installed chunkwm chunkwm
+if_installed compton compton
 if_installed fc-match fontconfig
 if_installed i3 i3
 if_installed nvim nvim

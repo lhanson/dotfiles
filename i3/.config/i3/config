@@ -71,8 +71,8 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-# split in vertical orientation
-bindsym $mod+v split v
+# split orientations (vertical or horizontal)
+bindsym $mod+v split toggle
 
 #################### layout modes
 # enter fullscreen mode for the focused container
@@ -167,7 +167,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 # Startup programs
 ################################################################################
 # Compositor, enables transparency
-exec compton
+exec compton --config $XDG_CONFIG_HOME/compton/compton.conf
 # Terminal
 exec $terminal
 # Restore previous wal theme

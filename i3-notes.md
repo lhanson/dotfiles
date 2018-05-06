@@ -13,6 +13,8 @@
 	$mod-[arrow or vi direction]
 ## moving windows
 	$mod-Shift[arrow or vi direction]
+## toggling split mode (horizontal/vertical)
+	$mod-v
 
 ## resizing
 	$mod-r [r]esize mode
@@ -23,9 +25,6 @@
 	$mod-Shift-r [r]estart
 	$mod-Shift-e [e]xit i3 session
 
-
-# Personalized config
-	LXDM reads /usr/share/xsessions/* for options
 
 # TODO
 
