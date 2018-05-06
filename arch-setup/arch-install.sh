@@ -72,6 +72,10 @@ do
 	install_package $x
 done
 
+# Apply system-level configuration
+git clone https://github.com/lhanson/Linux-Configuration /stow
+/stow/setup.sh
+
 
 dialog --infobox "Enabling Network Manager..." 4 40
 systemctl enable NetworkManager
