@@ -1,16 +1,7 @@
-[ ] Polybar use wal colors
-
 # Bugs
 
 [ ] Switching to xterm didn't solve the issue of (n)vim sporadically not
 	rendering blocks of text when scrolling/loading
-
-
-# Use stow for managing system-wide files in addition to user-specific dotfiles.
-
-[ ] Maintain /etc/lxdm/lxdm.conf to make i3 the default
-
-[ ] Set lxdm theme
 
 
 # Productivity 
@@ -25,15 +16,6 @@
 # Polybar
 
 [ ] Investigate plugins: https://github.com/x70b1/polybar-scripts
-
-
-# Theming
-
-[ ] lxdm theme. It's terrible, fix it.
-
-[ ] rofi theme
-
-[ ] See https://github.com/khamer/base16-i3 to use base16 for generating other app configs
 
 
 # Setup script: short-term wins

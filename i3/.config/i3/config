@@ -6,7 +6,6 @@
 
 # Variables
 ################################################################################
-set $background $HOME/images/desktop-background
 set $terminal xterm
 
 
@@ -153,7 +152,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+space exec rofi -show run
 
 # Lock screen
-bindsym $mod+shift+x exec i3lock -i $background
+bindsym $mod+shift+x exec $HOME/.local/bin/lock.sh
 
 # Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -173,6 +172,8 @@ exec compton
 exec $terminal
 # Restore previous wal theme
 exec wal -R
+# Open with lock screen
+exec $HOME/.local/bin/lock.sh
 
 # Browser
 exec google-chrome-stable
