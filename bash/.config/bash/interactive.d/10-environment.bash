@@ -15,7 +15,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_LIB_HOME=$HOME/.local/lib
 
 export GOPATH=$XDG_LIB_HOME/go
-export PATH=$HOME/bin:$GOPATH/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
 
 
 # Command history

@@ -121,7 +121,10 @@ For an index of xterm colors (0-255), see [this cheatsheet](https://jonasjacek.g
 ### Generating a theme
 
 Themes can be generated with pywal [pywal](https://github.com/dylanaraps/pywal)
-(`wal -i path_to_image.png').
+using the convenience script `wal/.local/bin/theme.sh`.
+
+The current background image will be linked to `~/.cache/wal/current-background`,
+and a blurred version of it (for lock screen use) is at `~/.cache/wal/current-background-blur.png`.
 
 ## Program specifics
 

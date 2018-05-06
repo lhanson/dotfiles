@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+	echo "Usage: theme [directory | filename]"
+	exit 1
+fi
+
+wal -i $1
+
+printf "\nGenerating blur image for lock screen\n"
+ln --symbolic --force $1 ~/.cache/wal/current-background
+magick convert -adaptive-blur 0x6 $1 ~/.cache/wal/current-background-blur.png
