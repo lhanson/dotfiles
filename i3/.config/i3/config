@@ -19,7 +19,8 @@ gaps outer 0
 # Scale gap size up or down
 bindsym $mod+g gaps inner current plus 5
 bindsym $mod+Shift+g gaps inner current minus 5
-default_border pixel 3
+default_border none
+#default_border pixel 3
 
 #################### Font
 # Window titles (and bar, unless specified in bar{} below)
@@ -33,9 +34,10 @@ set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
+set $white #ffffff
 
 # window colors         border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #ffaaaa
+client.focused          $bg-color $white           $text-color          #ffaaaa
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
@@ -167,7 +169,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 # Startup programs
 ################################################################################
 # Compositor, enables transparency
-exec compton --config $XDG_CONFIG_HOME/compton/compton.conf
+exec compton --config ~/.config/compton/compton.conf
 # Terminal
 exec $terminal
 # Restore previous wal theme
