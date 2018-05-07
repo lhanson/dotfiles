@@ -26,16 +26,22 @@ else
 	dialog --infobox "Adding user \"$name\"..." 4 50
 	useradd -m -g wheel -s /bin/bash $name >/dev/tty6
 	echo "$name:$pass1" | chpasswd >/dev/tty6
+	usermod $name --append --groups tty,video
 fi
 
 # Ensure that users in group wheel can run sudo without a password
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cp $script_dir/sudoers /etc/sudoers
+curl https://raw.githubusercontent.com/lhanson/dotfiles/master/arch-setup/sudoers > /tmp/sudoers
+cp /tmp/sudoers /etc/sudoers
 
 if [[ ! $(command -v aurman) ]]; then
 	dialog --infobox "Installing aurman for package management" 4 60
 	pacman --sync --noconfirm --needed base-devel git
 	cd /tmp
+	if [ -d /tmp/aurman ]; then
+		echo "Deleting existing '/tmp/aurman'"
+		rm -fr /tmp/aurman
+	fi
 	git clone https://aur.archlinux.org/aurman.git
 	chown -R $name:wheel aurman
 	cd aurman
@@ -59,9 +65,9 @@ pacman --noconfirm --sync --refresh archlinux-keyring >/dev/tty6
 
 dialog --infobox "Getting list of packages to install..." 4 40
 # pacman list
-curl https://gist.githubusercontent.com/lhanson/49ecb1f06f1a4cf89624208b41c3ef07/raw > /tmp/pacman-list.pkg
+curl https://gist.githubusercontent.com/lhanson/49ecb1f06f1a4cf89624208b41c3ef07/raw > /tmp/pacman-list.pkg.prelim
 # AUR list
-curl https://gist.githubusercontent.com/lhanson/973858b18d5daa7f92f29f679012b3f5/raw >> /tmp/pacman-list.pkg
+curl https://gist.githubusercontent.com/lhanson/973858b18d5daa7f92f29f679012b3f5/raw >> /tmp/pacman-list.pkg.prelim
 
 count=`wc -l /tmp/pacman-list.pkg | cut -f1 -d' '`
 n=0
@@ -80,6 +86,12 @@ git clone https://github.com/lhanson/Linux-Configuration /stow
 dialog --infobox "Enabling Network Manager..." 4 40
 systemctl enable NetworkManager
 systemctl start NetworkManager
+
+dialog --infobox "Enabling xinit-login to enable booting to your X session..." 4 70
+systemctl enable xinit-login
+systemctl start xinit-login
+
+rm /tmp/sudoers
 
 dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\n\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment.\n\n-Luke" 12 80
 clear
