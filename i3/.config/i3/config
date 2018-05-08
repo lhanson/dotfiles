@@ -6,7 +6,7 @@
 
 # Variables
 ################################################################################
-set $terminal xterm
+set $terminal urxvt
 
 
 # Appearance
@@ -28,19 +28,21 @@ default_border none
 font pango:serif 8
 
 #################### Colors
-set_from_resource $bg-color i3wm.background #2f343f
-set_from_resource $focused-background-color i3wm.color5 $background
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-set $white #ffffff
+# Use ugly fallbacks so I notice when something doesn't resolve
+set_from_resource $background i3wm.background #00ffaa
+set_from_resource $focused-background-color i3wm.color5 #00ffaa
+set_from_resource $focused-border-color i3wm.color4 #00ffaa
+set_from_resource $inactive-bg-color i3wm.background #aaaa00
+set_from_resource $text-color i3wm.color7 #ffffff
+set_from_resource $focused-indicator i3wm.color5 #ffffff
+set_from_resource $inactive-text-color i3wm.color8 #ffff00
+set_from_resource $urgent-bg-color i3wm.color13 #E53935
 
 # window colors         border              background         text                 indicator
-client.focused          $bg-color $white           $text-color          #ffaaaa
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+client.focused          $background         $focused-border-color $text-color       $focused-indicator
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $background
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $background
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $background
 
 
 # Key bindings
@@ -168,8 +170,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 
 # Startup programs
 ################################################################################
-# Compositor, enables transparency
-exec compton --config ~/.config/compton/compton.conf
 # Terminal
 exec $terminal
 # Restore previous wal theme
@@ -185,3 +185,5 @@ assign [class="Google-chrome"] 2
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Compositor, enables transparency
+exec_always compton --config ~/.config/compton/compton.conf

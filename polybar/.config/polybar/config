@@ -198,7 +198,6 @@ format-disconnected = <label-disconnected>
 [module/date]
 type = internal/date
 interval = 5
-format-prefix = 
 date = " %a, %b %d"
 time = " %I:%M %p"
 label = %date% %time%
@@ -207,7 +206,7 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
-# On the T440p, hw:0 is HDMI and hw:1 is PCH
+; On the T440p, hw:0 is HDMI and hw:1 is PCH
 master-soundcard = hw:1
 
 ; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
