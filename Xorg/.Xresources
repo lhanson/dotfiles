@@ -23,3 +23,6 @@ URxvt.font: xft:monospace:size=12,xft:Meslo LG S for Powerline:size=12
 URxvt.scrollBar: false
 URxvt.transparent: true
 URxvt.shading: 20
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
