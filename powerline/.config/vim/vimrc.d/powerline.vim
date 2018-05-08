@@ -9,7 +9,8 @@ if !has('nvim')
 	elseif filereadable("/usr/lib/python3.6/site-packages/powerline/bindings/vim/plugin/powerline.vim")
 		source /usr/lib/python3.6/site-packages/powerline/bindings/vim/plugin/powerline.vim
 :   endif
-
-	set laststatus=2
-	set t_Co=256
 endif
+
+set t_Co=256
+set laststatus=2	" Always display the statusline in all windows
+set noshowmode		" Hide the default mode text (e.g. -- INSERT -- below the statusline)
