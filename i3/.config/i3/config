@@ -176,6 +176,8 @@ exec $terminal
 exec wal -R
 # Open with lock screen
 exec $HOME/.local/bin/lock.sh
+# Use xss-lock to manage screen locking events
+exec --no-startup-id xss-lock -- $HOME/.local/bin/lock.sh
 
 # Browser
 exec google-chrome-stable
