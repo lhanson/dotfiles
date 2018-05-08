@@ -11,6 +11,14 @@ export DOTFILES_DIR=~/.dotfiles
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
+if [[ -d /run/user/$(id -u) ]]; then
+	# Looks like systemd is in play
+	export XDG_RUNTIME_DIR=/run/user/$(id -u)
+elif [[ -d $TMPDIR ]]; then
+	export XDG_RUNTIME_DIR=$TMPDIR
+else
+	export XDG_RUNTIME_DIR=/tmp/$(id -u)
+fi
 # This isn't defined by the spec, but I think it probably should be.
 export XDG_LIB_HOME=$HOME/.local/lib
 
