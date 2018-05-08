@@ -173,6 +173,11 @@ add the `--config` option to the invocations.
 There may be application or OS shortcuts that get in your way; disable or add
 overrides for them in `System Preferences -> Keyboard -> Shortcuts`[1](https://apple.stackexchange.com/a/286710/5394).
 
+### mutt
+
+Relies on [lastpass-cli](https://helpdesk.lastpass.com/lastpass-command-line-application/)
+to resolve credentials.
+
 
 ### WeeChat
 
