@@ -116,6 +116,7 @@ if_installed i3 i3
 if_installed nvim nvim
 if_installed polybar polybar
 if_installed powerline powerline
+if_installed ranger ranger
 if_installed rofi rofi
 if_installed skhd skhd
 if_installed vim vim
