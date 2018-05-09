@@ -163,6 +163,9 @@ if is_osx; then
 	printf "\n\n###### installing OS X packages\n"
 	stow iterm2
 	stow karabiner
+	if is_installed wal; then
+		stow wal-osx
+	fi
 fi
 
 printf "\n\n###### Done!\n"
