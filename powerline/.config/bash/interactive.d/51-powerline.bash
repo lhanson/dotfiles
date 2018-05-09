@@ -1,5 +1,5 @@
 ################################################################################
-# prompt.bash - a dollar sign for $PS1 is pretty cool, but we can do better
+# powerline.bash - a dollar sign for $PS1 is pretty cool, but we can do better
 ################################################################################
 
 # Powerline - https://wiki.archlinux.org/index.php/Powerline
