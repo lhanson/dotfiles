@@ -20,5 +20,6 @@ if has("multi_byte")
 	set listchars=tab:▸\ ,eol:¬
 endif
 
-" Show right margin
-set colorcolumn=80
+" Highlight first character over the line limit
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
