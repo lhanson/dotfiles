@@ -1,12 +1,49 @@
 #!/bin/bash
+#
+# Generates a theme based on a background image
+#
+# This includes a blurred version of the image for lockscreen use as well as
+# detecting highlight colors to use when filling placeholders for things like
+# window shadows.
 
-if [[ $# -ne 1 ]]; then
-	echo "Usage: theme [directory | filename]"
-	exit 1
-fi
+#if [[ $# -ne 1 ]]; then
+#	echo "Usage: theme [directory | filename]"
+#	exit 1
+#fi
 
-wal -i $1
+#wal -i $1
 
-printf "\nGenerating blur image for lock screen\n"
-ln --symbolic --force $1 ~/.cache/wal/current-background
-magick convert -adaptive-blur 0x6 $1 ~/.cache/wal/current-background-blur.png
+#ln --symbolic --force $1 ~/.cache/wal/current-background
+#printf "\nGenerating blur image for lock screen\n"
+#$(magick convert -adaptive-blur 0x6 $1 ~/.cache/wal/current-background-blur.png &)
+
+#if [[ -f $XDG_CONFIG_HOME/compton/compton.conf.template && \
+#	  -f $XDG_CACHE_HOME/wal/colors.sh ]]; then
+	printf "\nApplying highlight color to compton template\n"
+
+	# Read hex values of our chosen cterm color
+	source $XDG_CACHE_HOME/wal/colors.sh
+	hex_color=`echo $color5 | sed 's/#//g'`
+	red_hex=`echo $hex_color | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$1)}'`
+	green_hex=`echo $hex_color | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$2)}'`
+	blue_hex=`echo $hex_color | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$3)}'`
+	
+	# Scale to a value between 0.0 to 1.0
+	red_scaled=`echo "scale = 2; $red_hex / 256" | bc`
+	green_scaled=`echo "scale = 2; $green_hex / 256" | bc`
+	blue_scaled=`echo "scale = 2; $blue_hex / 256" | bc`
+
+	echo "Compton should use $red_scaled, $green_scaled, $blue_scaled"
+	#cp -f $XDG_CONFIG_HOME/compton/compton.conf.template $XDG_CONFIG_HOME/compton/compton.conf
+	echo "################################################################################"
+	echo "# compton config"
+	echo "# Generated from a template, see the @0 script"
+	echo "################################################################################"
+	printf "\n\n"
+	sed -e "s/\${red}/$red_scaled/" \
+		-e "s/\${green}/$green_scaled/" \
+		-e "s/\${blue}/$blue_scaled/"
+		$XDG_CONFIG_HOME/compton/compton.conf.template
+	# 
+#fi
+
