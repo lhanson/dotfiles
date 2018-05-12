@@ -13,8 +13,8 @@ shadow = true;				# Enabled client-side shadows on windows.
 clear-shadow = true;		# Zero the part of the shadow's mask behind the window (experimental).
 # Hard-code shadow RGB for now, but ideally this would be
 # read from the current wal theme.
-shadow-red = 0.87;
-shadow-green = 0.27;
-shadow-blue = 0.56;
+shadow-red = ${red};
+shadow-green = ${green};
+shadow-blue = ${blue};
 shadow-radius = 17;
 shadow-exclude = ["!focused"];

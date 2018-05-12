@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# Generates a theme based on a background image
+#
+# This includes a blurred version of the image for lockscreen use as well as
+# detecting highlight colors to use when filling placeholders for things like
+# window shadows.
 
 if [[ $# -ne 1 ]]; then
 	echo "Usage: theme [directory | filename]"
@@ -7,6 +13,30 @@ fi
 
 wal -i $1
 
-printf "\nGenerating blur image for lock screen\n"
-ln --symbolic --force $1 ~/.cache/wal/current-background
-magick convert -adaptive-blur 0x6 $1 ~/.cache/wal/current-background-blur.png
+bg_path=$(cat $XDG_CACHE_HOME/wal/wal)
+ln --symbolic --force $bg_path ~/.cache/wal/current-background
+$(convert -adaptive-blur 0x6 $bg_path ~/.cache/wal/current-background-blur.png &)
+
+if [[ -f $XDG_CONFIG_HOME/compton/compton.conf.template && \
+	  -f $XDG_CACHE_HOME/wal/colors.sh ]]; then
+	# Read hex values of our chosen cterm color
+	source $XDG_CACHE_HOME/wal/colors.sh
+	hex_color=`echo $color5 | sed 's/#//g'`
+	red_hex=`echo $hex_color | sed 's/../0x&,/g' | awk -F "," '{printf("%s",$1)}' | xargs -0 printf '%d'`
+	green_hex=`echo $hex_color | sed 's/../0x&,/g' | awk -F "," '{printf("%s",$2)}' | xargs -0 printf '%d'`
+	blue_hex=`echo $hex_color | sed 's/../0x&,/g' | awk -F "," '{printf("%s",$3)}' | xargs -0 printf '%d'`
+	
+	# Scale to a value between 0.0 to 1.0
+	red_scaled=`echo "scale = 2; $red_hex / 256" | bc`
+	green_scaled=`echo "scale = 2; $green_hex / 256" | bc`
+	blue_scaled=`echo "scale = 2; $blue_hex / 256" | bc`
+
+	out=$XDG_CONFIG_HOME/compton/compton.conf
+	echo "" > $out
+	sed -e "s/\${red}/$red_scaled/" \
+		-e "s/\${green}/$green_scaled/" \
+		-e "s/\${blue}/$blue_scaled/" \
+		$XDG_CONFIG_HOME/compton/compton.conf.template >> $out
+	killall -USR1 compton
+fi
+
