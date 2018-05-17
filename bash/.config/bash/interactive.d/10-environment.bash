@@ -28,9 +28,13 @@ export PATH=$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
 
 # Command history
 ################################################################################
-# Store more history, ignoring dupes
-export HISTCONTROL=ignoredups:erasedups  
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
-# Store this many commands in history
+# Store this many commands in memory
 export HISTSIZE=1000
+# Store this many commands on disk
+export HISTSIZE=5000
+# Store more history, ignoring dupes
+export HISTCONTROL=ignoredups:erasedups
+# Put the history file somewhere XDG-friendly
+export HISTFILE=$XDG_CACHE_HOME/bash_history
