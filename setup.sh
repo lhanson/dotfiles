@@ -22,6 +22,13 @@ function if_installed {
 	fi
 }
 
+# If a file ($1) is available, stow a package ($2)
+function if_file_exists {
+	if [[ -f $1 ]]; then
+		stow $2
+	fi
+}
+
 # Tests whether we're running on OS X
 function is_osx {
 	[[ `uname -s` == "Darwin" ]]
@@ -109,6 +116,7 @@ stow readline
 # packages installed if corresponding program is detected
 ################################################################################
 printf "\n\n###### detecting conditional packages\n"
+if_file_exists /chub/conf/environment caos
 if_installed chunkwm chunkwm
 if_installed compton compton
 if_installed fc-match fontconfig
