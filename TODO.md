@@ -1,3 +1,10 @@
+# Bash
+
+[ ] Move ~/.git-completion into .config or something
+
+[ ] Currently, it looks like if powerline isn't installed we don't source
+    git-completion, so we're not getting the cool branch indicator
+
 # Bugs
 
 [ ] Switching to xterm didn't solve the issue of (n)vim sporadically not
