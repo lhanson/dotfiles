@@ -40,6 +40,9 @@
 
 # Setup script: larger improvements
 
+[ ] Initial step: move existing files to backup/ to avoid conflict on initial setup
+	and reduce clutter in ~
+
 [ ] Add a Dockerfile for testing on Arch
 
 [ ] More elegant conflict handling. Most systems will have a default `.bash_profile`,
