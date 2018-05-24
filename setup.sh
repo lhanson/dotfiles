@@ -40,7 +40,7 @@ function indent {
 }
 
 # Test whether stow is installed *before* we redefine it as a function
-if [ -x "$(command -v stow)" ]; then
+if [[ -x "$(command -v stow)" || -f $HOME/bin/stow ]]; then
 	stow_installed=0
 else
 	stow_installed=1
