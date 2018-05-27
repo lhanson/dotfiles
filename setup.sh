@@ -68,6 +68,7 @@ if [[ $stow_installed == "1" ]]; then
 	# https://lists.gnu.org/archive/html/info-stow/2016-11/msg00004.html
 	stow_version="2.2.0"
 	printf "\n\n###### stow is not installed, bootstrapping\n"
+	cd /tmp
 	indent "curl --output stow.tar.gz https://ftp.gnu.org/gnu/stow/stow-${stow_version}.tar.gz" "curl stow"
 
 	echo
@@ -84,7 +85,7 @@ if [[ $stow_installed == "1" ]]; then
 	echo
 	cd $STOW_DIR
 	indent "stow/bin/stow -vv --stow stow" "stow stow"
-	indent "rm -fr stow-${stow_version}" "removing stow source"
+	indent "rm -fr /tmp/stow-${stow_version}" "removing stow source"
 else
 	printf "\nstow is already installed, skipping bootstrap\n"
 fi
