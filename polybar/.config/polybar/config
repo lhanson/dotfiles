@@ -14,7 +14,7 @@ font-1 = Inconsolata Nerd Font:size=15;4
 
 modules-left = i3
 modules-center = xwindow
-modules-right = battery volume wlan temperature date
+modules-right = battery volume temperature date
 
 fixed-center = true
 background = ${colors.mostly-transparent}
@@ -167,19 +167,18 @@ format-underline = ${xrdb:color6}
 label = %percentage_used%%
 
 
-[module/wlan]
-type = internal/network
-interface = wlp4s0
-interval = 3.0
+;[module/wlan]
+;type = internal/network
+;interface = wlp4s0
+;interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-label-connected = 
-;label-connected =  %essid%
+;format-connected = <ramp-signal> <label-connected>
+;label-connected = 
 
-format-disconnected = <label-disconnected>
-label-disconnected = no wifi
+;format-disconnected = <label-disconnected>
+;label-disconnected = no wifi
 
-ramp-signal-0 =
+;ramp-signal-0 =
 
 
 [module/eth]
@@ -199,7 +198,7 @@ format-disconnected = <label-disconnected>
 type = internal/date
 interval = 5
 date = " %a, %b %d"
-time = " %I:%M %p"
+time = " %l:%M %p"
 label = %date% %time%
 
 
