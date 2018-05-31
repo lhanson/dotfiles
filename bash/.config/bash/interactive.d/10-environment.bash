@@ -38,3 +38,5 @@ export HISTSIZE=5000
 export HISTCONTROL=ignoredups:erasedups
 # Put the history file somewhere XDG-friendly
 export HISTFILE=$XDG_CACHE_HOME/bash_history
+# less history also gets stowed
+export LESSHISTFILE=$XDG_CACHE_HOME/less_history
