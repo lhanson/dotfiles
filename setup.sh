@@ -122,7 +122,9 @@ if_installed chunkwm chunkwm
 if_installed compton compton
 if_installed fc-match fontconfig
 if_installed i3 i3
+if_installed intellij-idea-ultimate-edition intellij
 if_installed mutt mutt
+if_installed mvn maven
 if_installed neomutt mutt
 if_installed nvim nvim
 if_installed polybar polybar

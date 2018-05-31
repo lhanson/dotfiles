@@ -1,0 +1,4 @@
+# Ignore a bunch of files IntelliJ maintains at runtime
+.config/intellij/*
+# Except for our main properties file
+!.config/intellij/idea.properties

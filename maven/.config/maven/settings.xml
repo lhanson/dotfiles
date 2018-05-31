@@ -1,0 +1,62 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+	<localRepository>${env.XDG_CACHE_HOME}/maven</localRepository>
+	<servers>
+		<server>
+			<id>wams.doit.wisc.edu</id>
+			<username>wams-chub</username>
+			<password>R#sd8vjre99</password>
+			<!-- <password>{57rWzHhMduMHFvHJYPrurePAckZoAvgtHzer0o4MGGs=}</password> -->
+			<configuration>
+				<!-- <preferredAuthentications>publickey,password</preferredAuthentications> -->
+				<!-- <interactive>false</interactive> -->
+				<!-- <strictHostKeyChecking>no</strictHostKeyChecking> -->
+
+				<hostKey></hostKey>
+				<!-- <knownHostsProvider implementation="org.apache.maven.wagon.providers.ssh.knownhost.SingleKnownHostProvider"> -->
+				<!-- 	<hostKeyChecking>yes</hostKeyChecking> -->
+				<!-- </knownHostsProvider> -->
+
+				<!-- <knownHostsProvider implementation="org.apache.maven.wagon.providers.ssh.knownhost.NullKnownHostProvider"> -->
+				<!-- 	<hostKeyChecking>no</hostKeyChecking> -->
+				<!-- </knownHostsProvider> -->
+			</configuration>
+		</server>
+
+		<!-- Shared tools repositories -->
+		<server>
+			<id>code.doit-uw-releases</id>
+			<!-- <username>${netId}</username> -->
+			<!-- <password>{EE22bq+6EXYHxuuZbO6DCMAyOnbqhkksBvd0xFefyIWcQHkQiyN5ePbbC1BMOy9h}</password> -->
+			<username>ldhanson2</username>
+			<password>{EE22bq+6EXYHxuuZbO6DCMAyOnbqhkksBvd0xFefyIWcQHkQiyN5ePbbC1BMOy9h}</password>
+		</server>
+	</servers>
+
+    <mirrors>
+        <!-- Shared Tools Mirrors -->
+        <mirror>
+            <id>code.doit-central</id>
+            <name>code.doit Nexus Mirror of central</name>
+            <url>https://code.doit.wisc.edu/maven/content/repositories/central/</url>
+            <mirrorOf>central</mirrorOf>
+        </mirror>
+    </mirrors>
+
+	<profiles>
+		<profile>
+			<id>default-settings</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<netId>ldhanson2</netId>
+			</properties>
+		</profile>
+	</profiles>
+</settings>
+
+
