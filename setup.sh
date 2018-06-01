@@ -135,6 +135,7 @@ if_installed rofi rofi
 if_installed skhd skhd
 if_installed ssh ssh
 if_installed systemctl systemd
+stow urxvt # We need urxvt's termcap on systems where it isn't installed
 if_installed vim vim
 if_installed wal wal
 if is_installed weechat; then
