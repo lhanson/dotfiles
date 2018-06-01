@@ -133,6 +133,7 @@ if_installed powerline powerline
 if_installed ranger ranger
 if_installed rofi rofi
 if_installed skhd skhd
+if_installed ssh ssh
 if_installed systemctl systemd
 if_installed vim vim
 if_installed wal wal
