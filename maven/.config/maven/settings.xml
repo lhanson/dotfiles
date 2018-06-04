@@ -29,8 +29,26 @@
 		<!-- Shared tools repositories -->
 		<server>
 			<id>code.doit-uw-releases</id>
-			<!-- <username>${netId}</username> -->
-			<!-- <password>{EE22bq+6EXYHxuuZbO6DCMAyOnbqhkksBvd0xFefyIWcQHkQiyN5ePbbC1BMOy9h}</password> -->
+			<username>ldhanson2</username>
+			<password>{EE22bq+6EXYHxuuZbO6DCMAyOnbqhkksBvd0xFefyIWcQHkQiyN5ePbbC1BMOy9h}</password>
+		</server>
+		<server>
+			<id>code.doit-public-releases</id>
+			<username>ldhanson2</username>
+			<password>{EE22bq+6EXYHxuuZbO6DCMAyOnbqhkksBvd0xFefyIWcQHkQiyN5ePbbC1BMOy9h}</password>
+		</server>
+		<server>
+			<id>code.doit-uw-3rd-party</id>
+			<username>ldhanson2</username>
+			<password>{EE22bq+6EXYHxuuZbO6DCMAyOnbqhkksBvd0xFefyIWcQHkQiyN5ePbbC1BMOy9h}</password>
+		</server>
+		<server>
+			<id>code.doit-uw-snapshots</id>
+			<username>ldhanson2</username>
+			<password>{EE22bq+6EXYHxuuZbO6DCMAyOnbqhkksBvd0xFefyIWcQHkQiyN5ePbbC1BMOy9h}</password>
+		</server>
+		<server>
+			<id>code.doit-public-snapshots</id>
 			<username>ldhanson2</username>
 			<password>{EE22bq+6EXYHxuuZbO6DCMAyOnbqhkksBvd0xFefyIWcQHkQiyN5ePbbC1BMOy9h}</password>
 		</server>
@@ -45,18 +63,6 @@
             <mirrorOf>central</mirrorOf>
         </mirror>
     </mirrors>
-
-	<profiles>
-		<profile>
-			<id>default-settings</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<netId>ldhanson2</netId>
-			</properties>
-		</profile>
-	</profiles>
 </settings>
 
 
