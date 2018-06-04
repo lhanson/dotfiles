@@ -242,8 +242,6 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity>
 
-format-full-prefix = "f"
-
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
