@@ -91,18 +91,6 @@ Console fonts for use in the virtual console can be previewed by giving
 configured by setting e.g. `FONT=ter-powerline-v28n` in `/etc/vconsole.conf`.
 
 
-## Audio
-
-If audio doesn't work, (try `aplay test.wav` with a suitable test file), it may
-be the case that ALSA is using the wrong sound card by default. For example, on
-my Lenovo T440p doesn't default to a default mixer (run `amixer`) of `Master`
-like much of the documentation is geared toward, it has `IEC958` instead.
-Furthermore, `alsamixer` defaulted to a "HDA Intel HDMI" card, but what I really
-want to be the default is "HDA Intel PCH". Instruct ALSA to prefer card 1 by
-setting `defaults.pcm.card 1` in `/usr/share/alsa/alsa.conf` or its
-user-specific equivalent in `~/.asoundrc`.
-
-
 ## Theming
 
 As there are several places where programs might look for colors, fonts, and
@@ -125,6 +113,10 @@ using the convenience script `wal/.local/bin/theme.sh`.
 
 The current background image will be linked to `~/.cache/wal/current-background`,
 and a blurred version of it (for lock screen use) is at `~/.cache/wal/current-background-blur.png`.
+
+## Desktop notifications
+
+We handle `libnotify`-based notifications using [Dunst](https://wiki.archlinux.org/index.php/Dunst).
 
 ## Program specifics
 
