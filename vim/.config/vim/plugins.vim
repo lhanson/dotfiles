@@ -18,8 +18,12 @@ if dein#load_state(s:dein_cache)
   "##############################
   " Intelligently reopen files at your last edit position
   call dein#add('farmergreg/vim-lastplace')
+  " Match wal theme
   call dein#add('dylanaraps/wal.vim')
+  " Colorize color codes
   call dein#add('lilydjwg/colorizer')
+  " Commenting plugin
+  call dein#add('tpope/vim-commentary')
   if has('nvim')
     " nvim doesn't support powerline yet: https://github.com/powerline/powerline/issues/1287
     call dein#add('vim-airline/vim-airline')
