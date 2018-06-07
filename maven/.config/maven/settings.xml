@@ -58,16 +58,6 @@
 			<password>{zh9PVvh6L8kHfPsca9LQluL9sPlzEj6ksiRFMpGiS3cmd0/EJlfa6Or/nqLkKlHz49O36K5tqQQOcWygGVCtSQ==}</password>
 		</server>
 	</servers>
-
-    <mirrors>
-        <!-- Shared Tools Mirrors -->
-        <mirror>
-            <id>code.doit-central</id>
-            <name>code.doit Nexus Mirror of central</name>
-            <url>https://code.doit.wisc.edu/maven/content/repositories/central/</url>
-            <mirrorOf>central</mirrorOf>
-        </mirror>
-    </mirrors>
 </settings>
 
 
