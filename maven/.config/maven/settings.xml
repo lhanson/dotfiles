@@ -52,6 +52,11 @@
 			<username>ldhanson2</username>
 			<password>{EE22bq+6EXYHxuuZbO6DCMAyOnbqhkksBvd0xFefyIWcQHkQiyN5ePbbC1BMOy9h}</password>
 		</server>
+		<server>
+			<id>adi-public</id>
+			<username>ldhanson2</username>
+			<password>{zh9PVvh6L8kHfPsca9LQluL9sPlzEj6ksiRFMpGiS3cmd0/EJlfa6Or/nqLkKlHz49O36K5tqQQOcWygGVCtSQ==}</password>
+		</server>
 	</servers>
 
     <mirrors>
