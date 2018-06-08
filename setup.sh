@@ -135,6 +135,7 @@ if_installed rofi rofi
 if_installed skhd skhd
 if_installed ssh ssh
 if_installed systemctl systemd
+if_installed termite termite
 stow urxvt # We need urxvt's termcap on systems where it isn't installed
 if_installed vim vim
 if_installed wal wal
