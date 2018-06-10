@@ -24,6 +24,8 @@ if dein#load_state(s:dein_cache)
   call dein#add('lilydjwg/colorizer')
   " Commenting plugin
   call dein#add('tpope/vim-commentary')
+  " Clojure development
+  call dein#add('tpope/vim-fireplace.git')
   if has('nvim')
     " nvim doesn't support powerline yet: https://github.com/powerline/powerline/issues/1287
     call dein#add('vim-airline/vim-airline')
