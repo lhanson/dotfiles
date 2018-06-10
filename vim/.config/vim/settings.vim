@@ -5,6 +5,13 @@ if &compatible
 	set nocompatible               " Be iMproved
 endif
 
+" Leader
+let mapleader = ","
+
+" Buffer navigation
+nnoremap <C-h> :bprevious<CR>
+nnoremap <C-l> :bnext<CR>
+
 " Store netrw history in the cache directory
 let g:netrw_home=$XDG_CACHE_HOME.'/vim'
 
